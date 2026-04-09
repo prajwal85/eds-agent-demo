@@ -1,0 +1,88 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://wknd.site/us/en.html"
+      ],
+      "description": "WKND Adventures homepage with hero carousel, featured article teasers, article and adventure card grids",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            ".carousel.cmp-carousel--hero"
+          ]
+        },
+        {
+          "name": "columns-featured",
+          "instances": [
+            ".teaser.cmp-teaser--featured"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            ".image-list.list"
+          ]
+        },
+        {
+          "name": "hero-adventure",
+          "instances": [
+            ".teaser.cmp-teaser--hero.cmp-teaser--imagebottom"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Carousel",
+          "selector": ".carousel.cmp-carousel--hero",
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Featured Content and Recent Articles",
+          "selector": "main.cmp-layout-container--fixed:nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "columns-featured",
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".title.cmp-title--underline",
+            ".button.cmp-button--primary",
+            ".separator"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Climbing New Zealand Teaser",
+          "selector": ".teaser.cmp-teaser--hero.cmp-teaser--imagebottom",
+          "style": null,
+          "blocks": [
+            "hero-adventure"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Adventure Cards",
+          "selector": "main.cmp-layout-container--fixed:nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".title:has(.cmp-title__text)",
+            ".button.cmp-button--primary",
+            ".separator"
+          ]
+        }
+      ]
+    }
+  ]
+}
