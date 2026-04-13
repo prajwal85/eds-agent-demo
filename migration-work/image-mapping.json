@@ -1,0 +1,1158 @@
+{
+  "generated": "2026-04-13T08:44:55.361Z",
+  "totalImages": 106,
+  "totalSizeKB": "25774.3",
+  "damBasePath": "/content/dam/eds-agent-demo",
+  "images": [
+    {
+      "filename": "wknd-logo-dk.svg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/header/master/_jcr_content/root/container/container_1195249223/image.coreimg.svg/1594412560447/wknd-logo-dk.svg",
+      "alt": "WKND Logo",
+      "sizeKB": 1.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/wknd-logo-dk.svg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/magazine",
+        "us/en/adventures",
+        "us/en/faqs",
+        "us/en/about-us",
+        "us/en/magazine/san-diego-surf",
+        "us/en/magazine/western-australia",
+        "us/en/magazine/guide-la-skateparks",
+        "us/en/magazine/ski-touring",
+        "us/en/magazine/arctic-surfing",
+        "us/en/adventures/downhill-skiing-wyoming",
+        "us/en/adventures/climbing-new-zealand",
+        "us/en/adventures/yosemite-backpacking",
+        "us/en/adventures/whistler-mountain-biking",
+        "us/en/adventures/west-coast-cycling",
+        "us/en/adventures/tahoe-skiing",
+        "us/en/adventures/bali-surf-camp",
+        "us/en/adventures/beervana-portland",
+        "us/en/adventures/colorado-rock-climbing",
+        "us/en/adventures/cycling-southern-utah",
+        "us/en/adventures/cycling-tuscany",
+        "us/en/adventures/gastronomic-marais-tour",
+        "us/en/adventures/napa-wine-tasting",
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-216674449.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/_jcr_content/root/container/carousel/item_1571954853062.coreimg.jpeg/1660323801921/adobestock-216674449.jpeg",
+      "alt": "Female sitting on a large rock relaxing in afternoon dappled light the Australian bushland with views over the river",
+      "sizeKB": 320.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/misc/adobestock-216674449.jpeg",
+      "usedOnPages": [
+        "us/en"
+      ]
+    },
+    {
+      "filename": "beach-walking.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/_jcr_content/root/container/carousel/item_1572035298405.coreimg.jpeg/1660323822923/beach-walking.jpeg",
+      "alt": "Young lady with surfboard going to the ocean at surf spot",
+      "sizeKB": 97,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/misc/beach-walking.jpeg",
+      "usedOnPages": [
+        "us/en"
+      ]
+    },
+    {
+      "filename": "adobestock-185234795.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/_jcr_content/root/container/carousel/teaser.coreimg.jpeg/1660323784078/adobestock-185234795.jpeg",
+      "alt": "A skier does action skiing at the Rolle Pass in the Dolomites, Italy.",
+      "sizeKB": 312.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/misc/adobestock-185234795.jpeg",
+      "usedOnPages": [
+        "us/en"
+      ]
+    },
+    {
+      "filename": "adobestock-156407519.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/_jcr_content/root/container/container/teaser.coreimg.jpeg/1660323792132/adobestock-156407519.jpeg",
+      "alt": "The Lennard River carves a stunning canyon through the Napier Range at Windjana Gorge, Kimberley Region, Western Australia. The permanent pools in the river provide a permanent habitat for dozens of freshwater crocodiles. Rudyards Kipling's story \"The Elephant Child,\" comes to mind every time I visit Windjana Gorge in the Kimberley,  when the Elephant child says: \"and still I want to know what the Crocodile has for dinner!'Then Kolokolo Bird said, with a mournful cry, 'Go to the banks of the great grey-green, greasy Limpopo River, all set about with fever-trees, and find out.\"At Windana Gorge the green waters of the gorge pools are filled with  Johnston crocodiles floating in the tepid green waters or resting on the hot sand banks.They add a real air of wild Australia below the complex and colourful ramparts of the Gorge where the Leonard River flows through the ancient Devonian reefs.The history of the renegade aboriginal tracker Jandamarra who hid in caves in this gorge and the screeching of the galahs circling overhead and wheeling about amongst the crags further adds to the primeval atmosphere of this special place in Australia.",
+      "sizeKB": 221.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/misc/adobestock-156407519.jpeg",
+      "usedOnPages": [
+        "us/en"
+      ]
+    },
+    {
+      "filename": "article-01-picture-01.png",
+      "sourceUrl": "https://wknd.site/us/en/magazine/guide-la-skateparks/_jcr_content/root/container/container/contentfragment/par2/image_copy.coreimg.png/1660323783259/article-01-picture-01.png",
+      "alt": "Ultimate Guide to LA Skateparks",
+      "sizeKB": 845.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/guide-la-skateparks/article-01-picture-01.png",
+      "usedOnPages": [
+        "us/en",
+        "us/en/magazine",
+        "us/en/magazine/guide-la-skateparks"
+      ]
+    },
+    {
+      "filename": "skitouring5sjoeberg.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/ski-touring/_jcr_content/root/container/container/contentfragment/par1/image.coreimg.jpeg/1660323789866/skitouring5sjoeberg.jpeg",
+      "alt": "Ski Touring",
+      "sizeKB": 145.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/ski-touring/skitouring5sjoeberg.jpeg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/magazine",
+        "us/en/magazine/ski-touring"
+      ]
+    },
+    {
+      "filename": "surfer-wave-02.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/arctic-surfing/_jcr_content/root/container/container/contentfragment/par1/image.coreimg.jpeg/1660323789770/surfer-wave-02.jpeg",
+      "alt": "Arctic Surfing",
+      "sizeKB": 130,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/arctic-surfing/surfer-wave-02.jpeg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/magazine",
+        "us/en/magazine/arctic-surfing"
+      ]
+    },
+    {
+      "filename": "adobestock-164735399.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/san-diego-surf/_jcr_content/root/container/container/contentfragment/par1/image.coreimg.jpeg/1660323790169/adobestock-164735399.jpeg",
+      "alt": "San Diego Surf Spots",
+      "sizeKB": 283.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/san-diego-surf/adobestock-164735399.jpeg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/magazine",
+        "us/en/magazine/san-diego-surf"
+      ]
+    },
+    {
+      "filename": "adobestock-140634652.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/_jcr_content/root/container/teaser.coreimg.jpeg/1660323789729/adobestock-140634652.jpeg",
+      "alt": "Rock Climbing and Bouldering above the lake and mountains",
+      "sizeKB": 332.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/misc/adobestock-140634652.jpeg",
+      "usedOnPages": [
+        "us/en"
+      ]
+    },
+    {
+      "filename": "adobestock-231698835.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/yosemite-backpacking/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323790695/adobestock-231698835.jpeg",
+      "alt": "Yosemite Backpacking",
+      "sizeKB": 204.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/yosemite-backpacking/adobestock-231698835.jpeg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/yosemite-backpacking"
+      ]
+    },
+    {
+      "filename": "adobestock-122615840.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323789625/adobestock-122615840.jpeg",
+      "alt": "Whistler Mountain Biking",
+      "sizeKB": 548.4,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/adobestock-122615840.jpeg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "adobestock-151584995.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/west-coast-cycling/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323786740/adobestock-151584995.jpeg",
+      "alt": "West Coast Cycling",
+      "sizeKB": 179.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/west-coast-cycling/adobestock-151584995.jpeg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/west-coast-cycling"
+      ]
+    },
+    {
+      "filename": "adobestock-184591344.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/tahoe-skiing/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323785476/adobestock-184591344.jpeg",
+      "alt": "Tahoe Skiing",
+      "sizeKB": 227.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/tahoe-skiing/adobestock-184591344.jpeg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/tahoe-skiing"
+      ]
+    },
+    {
+      "filename": "wknd-logo-light.svg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/footer/master/_jcr_content/root/container/container/image.coreimg.svg/1594412963641/wknd-logo-light.svg",
+      "alt": "WKND Logo",
+      "sizeKB": 3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/wknd-logo-light.svg",
+      "usedOnPages": [
+        "us/en",
+        "us/en/magazine",
+        "us/en/adventures",
+        "us/en/faqs",
+        "us/en/about-us",
+        "us/en/magazine/san-diego-surf",
+        "us/en/magazine/western-australia",
+        "us/en/magazine/guide-la-skateparks",
+        "us/en/magazine/ski-touring",
+        "us/en/magazine/arctic-surfing",
+        "us/en/adventures/downhill-skiing-wyoming",
+        "us/en/adventures/climbing-new-zealand",
+        "us/en/adventures/yosemite-backpacking",
+        "us/en/adventures/whistler-mountain-biking",
+        "us/en/adventures/west-coast-cycling",
+        "us/en/adventures/tahoe-skiing",
+        "us/en/adventures/bali-surf-camp",
+        "us/en/adventures/beervana-portland",
+        "us/en/adventures/colorado-rock-climbing",
+        "us/en/adventures/cycling-southern-utah",
+        "us/en/adventures/cycling-tuscany",
+        "us/en/adventures/gastronomic-marais-tour",
+        "us/en/adventures/napa-wine-tasting",
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-156407519-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/_jcr_content/root/container/teaser_main.coreimg.jpeg/1660323792132/adobestock-156407519.jpeg",
+      "alt": "The Lennard River carves a stunning canyon through the Napier Range at Windjana Gorge, Kimberley Region, Western Australia. The permanent pools in the river provide a permanent habitat for dozens of freshwater crocodiles. Rudyards Kipling's story \"The Elephant Child,\" comes to mind every time I visit Windjana Gorge in the Kimberley,  when the Elephant child says: \"and still I want to know what the Crocodile has for dinner!'Then Kolokolo Bird said, with a mournful cry, 'Go to the banks of the great grey-green, greasy Limpopo River, all set about with fever-trees, and find out.\"At Windana Gorge the green waters of the gorge pools are filled with  Johnston crocodiles floating in the tepid green waters or resting on the hot sand banks.They add a real air of wild Australia below the complex and colourful ramparts of the Gorge where the Leonard River flows through the ancient Devonian reefs.The history of the renegade aboriginal tracker Jandamarra who hid in caves in this gorge and the screeching of the galahs circling overhead and wheeling about amongst the crags further adds to the primeval atmosphere of this special place in Australia.",
+      "sizeKB": 221.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/adobestock-156407519-2.jpeg",
+      "usedOnPages": [
+        "us/en/magazine"
+      ]
+    },
+    {
+      "filename": "adobe-waadobe-wa-b6a7083.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/western-australia/_jcr_content/root/container/container/contentfragment/par2/image.coreimg.jpeg/1660323770369/adobe-waadobe-wa-b6a7083.jpeg",
+      "alt": "Western Australia",
+      "sizeKB": 311.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/western-australia/adobe-waadobe-wa-b6a7083.jpeg",
+      "usedOnPages": [
+        "us/en/magazine",
+        "us/en/magazine/western-australia"
+      ]
+    },
+    {
+      "filename": "alaskan-grizzly.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/_jcr_content/root/container/teaser.coreimg.jpeg/1660323786175/alaskan-grizzly.jpeg",
+      "alt": "",
+      "sizeKB": 292.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/alaskan-grizzly.jpeg",
+      "usedOnPages": [
+        "us/en/magazine"
+      ]
+    },
+    {
+      "filename": "amazon-river-02.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/_jcr_content/root/container/teaser_copy.coreimg.jpeg/1660323790791/amazon-river-02.jpeg",
+      "alt": "",
+      "sizeKB": 335.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/amazon-river-02.jpeg",
+      "usedOnPages": [
+        "us/en/magazine"
+      ]
+    },
+    {
+      "filename": "adobestock-216674449-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.jpeg/1660323801921/adobestock-216674449.jpeg",
+      "alt": "Female sitting on a large rock relaxing in afternoon dappled light the Australian bushland with views over the river",
+      "sizeKB": 320.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/adobestock-216674449-2.jpeg",
+      "usedOnPages": [
+        "us/en/adventures"
+      ]
+    },
+    {
+      "filename": "adobestock-175749320.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/bali-surf-camp/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323792187/adobestock-175749320.jpeg",
+      "alt": "Bali Surf Camp",
+      "sizeKB": 240.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/bali-surf-camp/adobestock-175749320.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/bali-surf-camp"
+      ]
+    },
+    {
+      "filename": "adobestock-200192344.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/beervana-portland/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323790531/adobestock-200192344.jpeg",
+      "alt": "Beervana in Portland",
+      "sizeKB": 232.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/beervana-portland/adobestock-200192344.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/beervana-portland"
+      ]
+    },
+    {
+      "filename": "sport-climbing.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/carousel/item_1571266094599.coreimg.jpeg/1660323785724/sport-climbing.jpeg",
+      "alt": "Climbing New Zealand",
+      "sizeKB": 201.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/sport-climbing.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "adobestock-201222633.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/colorado-rock-climbing/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323789363/adobestock-201222633.jpeg",
+      "alt": "Colorado Rock Climbing",
+      "sizeKB": 367.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/colorado-rock-climbing/adobestock-201222633.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/colorado-rock-climbing"
+      ]
+    },
+    {
+      "filename": "adobestock-185324648.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-southern-utah/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323777766/adobestock-185324648.jpeg",
+      "alt": "Cycling Southern Utah",
+      "sizeKB": 282.4,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-southern-utah/adobestock-185324648.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures/cycling-southern-utah"
+      ]
+    },
+    {
+      "filename": "adobestock-59459597.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-tuscany/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323789294/adobestock-59459597.jpeg",
+      "alt": "Cycling Tuscany",
+      "sizeKB": 413.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-tuscany/adobestock-59459597.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/cycling-tuscany"
+      ]
+    },
+    {
+      "filename": "adobestock-185234795-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/downhill-skiing-wyoming/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323784078/adobestock-185234795.jpeg",
+      "alt": "Downhill Skiing Wyoming",
+      "sizeKB": 312.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/downhill-skiing-wyoming/adobestock-185234795-2.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/downhill-skiing-wyoming"
+      ]
+    },
+    {
+      "filename": "adobestock-294203896.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/gastronomic-marais-tour/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323786247/adobestock-294203896.jpeg",
+      "alt": "Gastronomic Marais Tour",
+      "sizeKB": 406.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/gastronomic-marais-tour/adobestock-294203896.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/gastronomic-marais-tour"
+      ]
+    },
+    {
+      "filename": "adobestock-280313729.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/napa-wine-tasting/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323791204/adobestock-280313729.jpeg",
+      "alt": "Napa Wine Tasting",
+      "sizeKB": 216.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/napa-wine-tasting/adobestock-280313729.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/napa-wine-tasting"
+      ]
+    },
+    {
+      "filename": "adobe-waadobe-wa-mg-2466.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323783461/adobe-waadobe-wa-mg-2466.jpeg",
+      "alt": "Riverside Camping",
+      "sizeKB": 73.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/adobe-waadobe-wa-mg-2466.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures",
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-238230356.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/ski-touring-mont-blanc/_jcr_content/root/container/carousel/item_1571168419252.coreimg.jpeg/1660323789507/adobestock-238230356.jpeg",
+      "alt": "Ski Touring Mont Blanc",
+      "sizeKB": 275.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/ski-touring-mont-blanc/adobestock-238230356.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures"
+      ]
+    },
+    {
+      "filename": "adobestock-278302117.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/surf-camp-costa-rica/_jcr_content/root/container/carousel/image.coreimg.jpeg/1660323786122/adobestock-278302117.jpeg",
+      "alt": "Surf Camp in Costa Rica",
+      "sizeKB": 206.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/surf-camp-costa-rica/adobestock-278302117.jpeg",
+      "usedOnPages": [
+        "us/en/adventures",
+        "us/en/adventures"
+      ]
+    },
+    {
+      "filename": "adobestock-277768563.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/faqs/_jcr_content/root/container/container/image.coreimg.jpeg/1660323785307/adobestock-277768563.jpeg",
+      "alt": "Back view of woman in hat and coat standing on high peak holding hands apart against majestic terrain with lake and mountains",
+      "sizeKB": 91.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/faqs/adobestock-277768563.jpeg",
+      "usedOnPages": [
+        "us/en/faqs"
+      ]
+    },
+    {
+      "filename": "stacey-roswells.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/stacey-roswells/master/_jcr_content/root/container/image.coreimg.jpeg/1660323785093/stacey-roswells.jpeg",
+      "alt": "",
+      "sizeKB": 98.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/stacey-roswells.jpeg",
+      "usedOnPages": [
+        "us/en/about-us"
+      ]
+    },
+    {
+      "filename": "alex-iby-343837.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/jake-hammer/master/_jcr_content/root/container/image.coreimg.jpeg/1660323785595/alex-iby-343837.jpeg",
+      "alt": "",
+      "sizeKB": 154.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/alex-iby-343837.jpeg",
+      "usedOnPages": [
+        "us/en/about-us"
+      ]
+    },
+    {
+      "filename": "ian-provo.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/ian-provo/master/_jcr_content/root/container/image.coreimg.jpeg/1660323783653/ian-provo.jpeg",
+      "alt": "",
+      "sizeKB": 245.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/ian-provo.jpeg",
+      "usedOnPages": [
+        "us/en/about-us"
+      ]
+    },
+    {
+      "filename": "jacob-wester.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/jacob-wester/master/_jcr_content/root/container/image.coreimg.jpeg/1660323792237/jacob-wester.jpeg",
+      "alt": "",
+      "sizeKB": 137.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/jacob-wester.jpeg",
+      "usedOnPages": [
+        "us/en/about-us"
+      ]
+    },
+    {
+      "filename": "ayo-ogunseinde-237739.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/sofia-sjoeberg/master/_jcr_content/root/container/image.coreimg.jpeg/1660323785351/ayo-ogunseinde-237739.jpeg",
+      "alt": "",
+      "sizeKB": 145.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/ayo-ogunseinde-237739.jpeg",
+      "usedOnPages": [
+        "us/en/about-us"
+      ]
+    },
+    {
+      "filename": "justin-barr.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/justin-barr/master/_jcr_content/root/container/image.coreimg.jpeg/1660323786548/justin-barr.jpeg",
+      "alt": "",
+      "sizeKB": 228,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/justin-barr.jpeg",
+      "usedOnPages": [
+        "us/en/about-us"
+      ]
+    },
+    {
+      "filename": "kumar-selvaraj.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/kumar-selveraj/master/_jcr_content/root/container/image.coreimg.jpeg/1660323783843/kumar-selvaraj.jpeg",
+      "alt": "",
+      "sizeKB": 188.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/kumar-selvaraj.jpeg",
+      "usedOnPages": [
+        "us/en/about-us"
+      ]
+    },
+    {
+      "filename": "beach-walking-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/san-diego-surf/_jcr_content/root/container/image.coreimg.jpeg/1660323822923/beach-walking.jpeg",
+      "alt": "Young lady with surfboard going to the ocean at surf spot",
+      "sizeKB": 72,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/san-diego-surf/beach-walking-2.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/san-diego-surf"
+      ]
+    },
+    {
+      "filename": "adobestock-166388792.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/san-diego-surf/_jcr_content/root/container/container/contentfragment/par2/image.coreimg.jpeg/1660323785861/adobestock-166388792.jpeg",
+      "alt": "Famous bay for surf on Nicaragua aerial drone view on sunset time",
+      "sizeKB": 201,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/san-diego-surf/adobestock-166388792.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/san-diego-surf"
+      ]
+    },
+    {
+      "filename": "adobestock-266406767.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/san-diego-surf/_jcr_content/root/container/container/contentfragment/par4/image.coreimg.jpeg/1660323789400/adobestock-266406767.jpeg",
+      "alt": "Guy surfing in Costa Rica",
+      "sizeKB": 171.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/san-diego-surf/adobestock-266406767.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/san-diego-surf"
+      ]
+    },
+    {
+      "filename": "adobestock-272184938.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/san-diego-surf/_jcr_content/root/container/container/contentfragment/par5/image.coreimg.jpeg/1660323790890/adobestock-272184938.jpeg",
+      "alt": "beach and sea",
+      "sizeKB": 215.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/san-diego-surf/adobestock-272184938.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/san-diego-surf"
+      ]
+    },
+    {
+      "filename": "justin-barr-2.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/justin-barr/byline/_jcr_content/root/container/byline_copy.coreimg.jpeg/1660323786548/justin-barr.jpeg",
+      "alt": "",
+      "sizeKB": 228,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/justin-barr-2.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/san-diego-surf"
+      ]
+    },
+    {
+      "filename": "adobestock-156407519-3.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/western-australia/_jcr_content/root/container/image.coreimg.jpeg/1660323792132/adobestock-156407519.jpeg",
+      "alt": "The Lennard River carves a stunning canyon through the Napier Range at Windjana Gorge, Kimberley Region, Western Australia. The permanent pools in the river provide a permanent habitat for dozens of freshwater crocodiles. Rudyards Kipling's story \"The Elephant Child,\" comes to mind every time I visit Windjana Gorge in the Kimberley,  when the Elephant child says: \"and still I want to know what the Crocodile has for dinner!'Then Kolokolo Bird said, with a mournful cry, 'Go to the banks of the great grey-green, greasy Limpopo River, all set about with fever-trees, and find out.\"At Windana Gorge the green waters of the gorge pools are filled with  Johnston crocodiles floating in the tepid green waters or resting on the hot sand banks.They add a real air of wild Australia below the complex and colourful ramparts of the Gorge where the Leonard River flows through the ancient Devonian reefs.The history of the renegade aboriginal tracker Jandamarra who hid in caves in this gorge and the screeching of the galahs circling overhead and wheeling about amongst the crags further adds to the primeval atmosphere of this special place in Australia.",
+      "sizeKB": 221.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/western-australia/adobestock-156407519-3.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/western-australia"
+      ]
+    },
+    {
+      "filename": "adobe-waadobe-wa-mg-3094.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/western-australia/_jcr_content/root/container/container/contentfragment/par3/image.coreimg.jpeg/1660323789157/adobe-waadobe-wa-mg-3094.jpeg",
+      "alt": "",
+      "sizeKB": 175.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/western-australia/adobe-waadobe-wa-mg-3094.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/western-australia"
+      ]
+    },
+    {
+      "filename": "adobe-waadobe-wa-mg-3851.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/western-australia/_jcr_content/root/container/container/contentfragment/par4/image.coreimg.jpeg/1660323786307/adobe-waadobe-wa-mg-3851.jpeg",
+      "alt": "",
+      "sizeKB": 238.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/western-australia/adobe-waadobe-wa-mg-3851.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/western-australia"
+      ]
+    },
+    {
+      "filename": "ayo-ogunseinde-237739-2.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/sofia-sjoeberg/byline/_jcr_content/root/container/byline_copy.coreimg.jpeg/1660323785351/ayo-ogunseinde-237739.jpeg",
+      "alt": "",
+      "sizeKB": 145.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/ayo-ogunseinde-237739-2.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/western-australia",
+        "us/en/magazine/ski-touring"
+      ]
+    },
+    {
+      "filename": "article-01-hero.png",
+      "sourceUrl": "https://wknd.site/us/en/magazine/guide-la-skateparks/_jcr_content/root/container/image.coreimg.png/1660323783402/article-01-hero.png",
+      "alt": "hero image for Skate park",
+      "sizeKB": 1156,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/guide-la-skateparks/article-01-hero.png",
+      "usedOnPages": [
+        "us/en/magazine/guide-la-skateparks"
+      ]
+    },
+    {
+      "filename": "robson-hatsukami-morgan-280159.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/guide-la-skateparks/_jcr_content/root/container/container/contentfragment/par5/image.coreimg.jpeg/1660323777041/robson-hatsukami-morgan-280159.jpeg",
+      "alt": "",
+      "sizeKB": 95.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/guide-la-skateparks/robson-hatsukami-morgan-280159.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/guide-la-skateparks"
+      ]
+    },
+    {
+      "filename": "stacey-roswells-2.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/stacey-roswells/byline/_jcr_content/root/container/byline_copy.coreimg.jpeg/1660323785093/stacey-roswells.jpeg",
+      "alt": "",
+      "sizeKB": 98.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/stacey-roswells-2.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/guide-la-skateparks"
+      ]
+    },
+    {
+      "filename": "skitouring1sjoeberg.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/ski-touring/_jcr_content/root/container/image.coreimg.jpeg/1660323790419/skitouring1sjoeberg.jpeg",
+      "alt": "",
+      "sizeKB": 102.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/ski-touring/skitouring1sjoeberg.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/ski-touring"
+      ]
+    },
+    {
+      "filename": "skitouring3sjoeberg.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/ski-touring/_jcr_content/root/container/container/contentfragment/par2/image.coreimg.jpeg/1660323777606/skitouring3sjoeberg.jpeg",
+      "alt": "",
+      "sizeKB": 136.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/ski-touring/skitouring3sjoeberg.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/ski-touring"
+      ]
+    },
+    {
+      "filename": "skitouring6sjoeberg.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/ski-touring/_jcr_content/root/container/container/contentfragment/par3/image.coreimg.jpeg/1660323777316/skitouring6sjoeberg.jpeg",
+      "alt": "",
+      "sizeKB": 222.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/ski-touring/skitouring6sjoeberg.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/ski-touring"
+      ]
+    },
+    {
+      "filename": "skitouring8sjoeberg.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/ski-touring/_jcr_content/root/container/container/contentfragment/par4/image.coreimg.jpeg/1660323790365/skitouring8sjoeberg.jpeg",
+      "alt": "",
+      "sizeKB": 192.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/ski-touring/skitouring8sjoeberg.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/ski-touring"
+      ]
+    },
+    {
+      "filename": "surfer-back-from-the-ocean.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/arctic-surfing/_jcr_content/root/container/image.coreimg.jpeg/1660323783968/surfer-back-from-the-ocean.jpeg",
+      "alt": "",
+      "sizeKB": 82,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/arctic-surfing/surfer-back-from-the-ocean.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/arctic-surfing"
+      ]
+    },
+    {
+      "filename": "majestic-rainbow.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/arctic-surfing/_jcr_content/root/container/container/contentfragment/par2/image.coreimg.jpeg/1660323791937/majestic-rainbow.jpeg",
+      "alt": "",
+      "sizeKB": 170.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/arctic-surfing/majestic-rainbow.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/arctic-surfing"
+      ]
+    },
+    {
+      "filename": "northern-lights.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/magazine/arctic-surfing/_jcr_content/root/container/container/contentfragment/par4/image.coreimg.jpeg/1660323776822/northern-lights.jpeg",
+      "alt": "",
+      "sizeKB": 124.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/magazine/arctic-surfing/northern-lights.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/arctic-surfing"
+      ]
+    },
+    {
+      "filename": "jacob-wester-2.jpeg",
+      "sourceUrl": "https://wknd.site/content/experience-fragments/wknd/language-masters/en/contributors/jacob-wester/byline/_jcr_content/root/container/byline_copy.coreimg.jpeg/1660323792237/jacob-wester.jpeg",
+      "alt": "",
+      "sizeKB": 137.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/shared/jacob-wester-2.jpeg",
+      "usedOnPages": [
+        "us/en/magazine/arctic-surfing"
+      ]
+    },
+    {
+      "filename": "freeride-steep.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/downhill-skiing-wyoming/_jcr_content/root/container/carousel/item_1572032225765.coreimg.jpeg/1660323769901/freeride-steep.jpeg",
+      "alt": "Steep skiing above valley",
+      "sizeKB": 153.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/downhill-skiing-wyoming/freeride-steep.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/downhill-skiing-wyoming"
+      ]
+    },
+    {
+      "filename": "adobestock-170334891.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/downhill-skiing-wyoming/_jcr_content/root/container/carousel/item_1572025260171.coreimg.jpeg/1660323769744/adobestock-170334891.jpeg",
+      "alt": "Jackson Hole Tram",
+      "sizeKB": 200,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/downhill-skiing-wyoming/adobestock-170334891.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/downhill-skiing-wyoming"
+      ]
+    },
+    {
+      "filename": "adobestock-93049279.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/downhill-skiing-wyoming/_jcr_content/root/container/container/tabs/item_1570890135033/par1/image.coreimg.jpeg/1660323791127/adobestock-93049279.jpeg",
+      "alt": "Snowy Winter Dawn on the Teton Range, Grand Teton National Park",
+      "sizeKB": 322.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/downhill-skiing-wyoming/adobestock-93049279.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/downhill-skiing-wyoming"
+      ]
+    },
+    {
+      "filename": "freeride.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/downhill-skiing-wyoming/_jcr_content/root/container/container/tabs/item_1570890140330/par1/image.coreimg.jpeg/1660323785655/freeride.jpeg",
+      "alt": "Skier in deep powder, extreme mountain freeride",
+      "sizeKB": 82.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/downhill-skiing-wyoming/freeride.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/downhill-skiing-wyoming"
+      ]
+    },
+    {
+      "filename": "adobestock-166718157.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/downhill-skiing-wyoming/_jcr_content/root/container/container/tabs/item_1570890140330/par5/image.coreimg.jpeg/1660323776803/adobestock-166718157.jpeg",
+      "alt": "A woman riding a snowmobile in the middle of wyoming.",
+      "sizeKB": 408.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/downhill-skiing-wyoming/adobestock-166718157.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/downhill-skiing-wyoming"
+      ]
+    },
+    {
+      "filename": "climber-gear-rope.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/carousel/item_1572024815642.coreimg.jpeg/1660323776717/climber-gear-rope.jpeg",
+      "alt": "Climber woman wearing in safety harness with equipment holding rope and preparing to climb",
+      "sizeKB": 281.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/climber-gear-rope.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "adobestock-277768563-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/carousel/item_1572024817401.coreimg.jpeg/1660323785307/adobestock-277768563.jpeg",
+      "alt": "Back view of woman in hat and coat standing on high peak holding hands apart against majestic terrain with lake and mountains",
+      "sizeKB": 91.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/adobestock-277768563-2.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "adobestock-277948178.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/container/tabs/item_1570890135033/par1/image.coreimg.jpeg/1660323796079/adobestock-277948178.jpeg",
+      "alt": "Low angle view of man climbing on mountain",
+      "sizeKB": 226.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/adobestock-277948178.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "climber-gear-outdoor.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/container/tabs/item_1570890135033/par2/image.coreimg.jpeg/1660323770101/climber-gear-outdoor.jpeg",
+      "alt": "Collection of rock climbing gear attached to a climber's harness",
+      "sizeKB": 238.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/climber-gear-outdoor.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "adobestock-140634652-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/container/tabs/item_1570890140330/par1/image.coreimg.jpeg/1660323789729/adobestock-140634652.jpeg",
+      "alt": "Rock Climbing and Bouldering above the lake and mountains",
+      "sizeKB": 332.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/adobestock-140634652-2.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "adobestock-166394648.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/container/tabs/item_1570890140330/par3/image.coreimg.jpeg/1660323777226/adobestock-166394648.jpeg",
+      "alt": "An athletic couple climbs to the basin of a waterfall",
+      "sizeKB": 301.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/adobestock-166394648.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "equipment-4.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/climbing-new-zealand/_jcr_content/root/container/container/tabs/item_1570890147607/par0/image_1323112874.coreimg.jpeg/1660323785248/equipment-4.jpeg",
+      "alt": "",
+      "sizeKB": 406.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/climbing-new-zealand/equipment-4.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/climbing-new-zealand"
+      ]
+    },
+    {
+      "filename": "adobestock-196967522.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/yosemite-backpacking/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par0/image.coreimg.jpeg/1660323777939/adobestock-196967522.jpeg",
+      "alt": "family in yosemite",
+      "sizeKB": 433.4,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/yosemite-backpacking/adobestock-196967522.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/yosemite-backpacking"
+      ]
+    },
+    {
+      "filename": "adobestock-122578479.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/carousel/item_1572023290053.coreimg.jpeg/1660323790235/adobestock-122578479.jpeg",
+      "alt": "A mountain biker rides high above Kootenay Lake in the Purcell Mountains of British Columbia",
+      "sizeKB": 358.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/adobestock-122578479.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "mountain-biking.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/carousel/item_1572028926848.coreimg.jpeg/1660323770243/mountain-biking.jpeg",
+      "alt": "Biketrip in the dolomite mountains",
+      "sizeKB": 167,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/mountain-biking.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "adobestock-122618183.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/container/tabs/item_1570890135033/par1/image.coreimg.jpeg/1660323789910/adobestock-122618183.jpeg",
+      "alt": "A male mountain biker rides the amazing trails of Carcross, Yukon during the fall colors.",
+      "sizeKB": 370.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/adobestock-122618183.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "forest-trail.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/container/tabs/item_1570890135033/par2/image.coreimg.jpeg/1660323769981/forest-trail.jpeg",
+      "alt": "Cyclist riding mountain bike on rocky trail",
+      "sizeKB": 250.4,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/forest-trail.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "adobestock-257501643.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/container/tabs/item_1570890140330/par1/image.coreimg.jpeg/1660323786612/adobestock-257501643.jpeg",
+      "alt": "Alpine mountain landscape at sunset, Whistler, BC, Canada",
+      "sizeKB": 134.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/adobestock-257501643.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "adobestock-277761435.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/container/tabs/item_1570890140330/par3/image.coreimg.jpeg/1660323792023/adobestock-277761435.jpeg",
+      "alt": "Canadian Mountainscape in Summer at Garibaldi Provincial Park",
+      "sizeKB": 283.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/adobestock-277761435.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "sequoiaside.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/container/tabs/item_1570890147607/par1/image.coreimg.jpeg/1660323783788/sequoiaside.jpeg",
+      "alt": "",
+      "sizeKB": 153.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/sequoiaside.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "blast.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/container/tabs/item_1570890147607/par1/image_916512861.coreimg.jpeg/1660323789447/blast.jpeg",
+      "alt": "",
+      "sizeKB": 45.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/blast.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "mx121.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/whistler-mountain-biking/_jcr_content/root/container/container/tabs/item_1570890147607/par1/image_833101704.coreimg.jpeg/1660323769802/mx121.jpeg",
+      "alt": "",
+      "sizeKB": 84.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/whistler-mountain-biking/mx121.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/whistler-mountain-biking"
+      ]
+    },
+    {
+      "filename": "mountain-biking-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/west-coast-cycling/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par0/image.coreimg.jpeg/1660323770243/mountain-biking.jpeg",
+      "alt": "Biketrip in the dolomite mountains",
+      "sizeKB": 167,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/west-coast-cycling/mountain-biking-2.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/west-coast-cycling"
+      ]
+    },
+    {
+      "filename": "adobestock-224653243.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/tahoe-skiing/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par0/image.coreimg.jpeg/1660323770289/adobestock-224653243.jpeg",
+      "alt": "Crystalline water at Sand Harbor in Lake Tahoe",
+      "sizeKB": 312.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/tahoe-skiing/adobestock-224653243.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/tahoe-skiing"
+      ]
+    },
+    {
+      "filename": "adobestock-266405335.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/bali-surf-camp/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par1/image.coreimg.jpeg/1660323795978/adobestock-266405335.jpeg",
+      "alt": "Boutique hotel on Costa Rica hilltop that serves great food with pool and yoga deck.",
+      "sizeKB": 336.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/bali-surf-camp/adobestock-266405335.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/bali-surf-camp"
+      ]
+    },
+    {
+      "filename": "adobestock-209250305.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/beervana-portland/_jcr_content/root/container/carousel/item_1572022899409.coreimg.jpeg/1660323790963/adobestock-209250305.jpeg",
+      "alt": "View of Mt. Hood across Portland from Pittock Mansion",
+      "sizeKB": 423.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/beervana-portland/adobestock-209250305.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/beervana-portland"
+      ]
+    },
+    {
+      "filename": "adam-wilson-642203-unsplash.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/beervana-portland/_jcr_content/root/container/container/tabs/item_1570890135033/par2/image.coreimg.jpeg/1660323778022/adam-wilson-642203-unsplash.jpeg",
+      "alt": "",
+      "sizeKB": 113.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/beervana-portland/adam-wilson-642203-unsplash.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/beervana-portland"
+      ]
+    },
+    {
+      "filename": "adobestock-279232449.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/beervana-portland/_jcr_content/root/container/container/tabs/item_1570890140330/par1/image.coreimg.jpeg/1660323789972/adobestock-279232449.jpeg",
+      "alt": "Smiling friends enjoying beer in brewery",
+      "sizeKB": 230.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/beervana-portland/adobestock-279232449.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/beervana-portland"
+      ]
+    },
+    {
+      "filename": "adobestock-241578158.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/colorado-rock-climbing/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par1/image.coreimg.jpeg/1660323791978/adobestock-241578158.jpeg",
+      "alt": "Young woman climbing a rock wall in a canyon - Strong climber training outdoor - Travel, female power and extreme dangerous sport concept - Focus on her head",
+      "sizeKB": 332.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/colorado-rock-climbing/adobestock-241578158.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/colorado-rock-climbing"
+      ]
+    },
+    {
+      "filename": "adobestock-221043703.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-southern-utah/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par1/image.coreimg.jpeg/1660323786500/adobestock-221043703.jpeg",
+      "alt": "A Young Mountain Biking Couple Takes A Minute To Take In The Scenery",
+      "sizeKB": 214.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-southern-utah/adobestock-221043703.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/cycling-southern-utah"
+      ]
+    },
+    {
+      "filename": "adobestock-65986215.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-tuscany/_jcr_content/root/container/carousel/item_1572023765179.coreimg.jpeg/1660323783319/adobestock-65986215.jpeg",
+      "alt": "Landscape in Tuscany",
+      "sizeKB": 460.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-tuscany/adobestock-65986215.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/cycling-tuscany"
+      ]
+    },
+    {
+      "filename": "adobestock-272493830.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-tuscany/_jcr_content/root/container/carousel/item_1572023766858.coreimg.jpeg/1660323789249/adobestock-272493830.jpeg",
+      "alt": "Action shot of cyclists riding hard.",
+      "sizeKB": 146.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-tuscany/adobestock-272493830.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/cycling-tuscany"
+      ]
+    },
+    {
+      "filename": "adobestock-261097343.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-tuscany/_jcr_content/root/container/container/tabs/item_1570890135033/par1/image.coreimg.jpeg/1660323790999/adobestock-261097343.jpeg",
+      "alt": "Action shot of cyclists riding hard.",
+      "sizeKB": 241.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-tuscany/adobestock-261097343.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/cycling-tuscany"
+      ]
+    },
+    {
+      "filename": "adobestock-268213814.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-tuscany/_jcr_content/root/container/container/tabs/item_1570890140330/par1/image.coreimg.jpeg/1660323790019/adobestock-268213814.jpeg",
+      "alt": "Yummy party platter with various finger food",
+      "sizeKB": 337.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-tuscany/adobestock-268213814.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/cycling-tuscany"
+      ]
+    },
+    {
+      "filename": "adobestock-141786166.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/cycling-tuscany/_jcr_content/root/container/container/tabs/item_1570890140330/par3/image.coreimg.jpeg/1660323777425/adobestock-141786166.jpeg",
+      "alt": "Italy, Tuscany, Siena District, Orcia Valley -Belvedere at sunrise",
+      "sizeKB": 151.6,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/cycling-tuscany/adobestock-141786166.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/cycling-tuscany"
+      ]
+    },
+    {
+      "filename": "adobestock-270835979.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/gastronomic-marais-tour/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par0/image.coreimg.jpeg/1660323783719/adobestock-270835979.jpeg",
+      "alt": "Duck legs confit with potato gratin and mushroom on a plate. Close up.",
+      "sizeKB": 314.8,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/gastronomic-marais-tour/adobestock-270835979.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/gastronomic-marais-tour"
+      ]
+    },
+    {
+      "filename": "adobestock-239751461.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/napa-wine-tasting/_jcr_content/root/container/carousel/item_1604865299312.coreimg.jpeg/1660323777828/adobestock-239751461.jpeg",
+      "alt": "Wine glasses in a row. Pouring wine. Buffet table celebration of wine tasting. Nightlife, celebration and entertainment concept",
+      "sizeKB": 119.2,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/napa-wine-tasting/adobestock-239751461.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/napa-wine-tasting"
+      ]
+    },
+    {
+      "filename": "adobestock-277654931.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/napa-wine-tasting/_jcr_content/root/container/container_fixed/tabs/item_1594238312974/par1/image.coreimg.jpeg/1660323785998/adobestock-277654931.jpeg",
+      "alt": "Woman is drinking a glass of wine on a wine tasting",
+      "sizeKB": 190.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/napa-wine-tasting/adobestock-277654931.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/napa-wine-tasting"
+      ]
+    },
+    {
+      "filename": "adobestock-216674449-3.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/carousel/item_1571168419252.coreimg.jpeg/1660323801921/adobestock-216674449.jpeg",
+      "alt": "Female sitting on a large rock relaxing in afternoon dappled light the Australian bushland with views over the river",
+      "sizeKB": 320.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/adobestock-216674449-3.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-257501643-2.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/carousel/item_1571168422510.coreimg.jpeg/1660323786612/adobestock-257501643.jpeg",
+      "alt": "Alpine mountain landscape at sunset, Whistler, BC, Canada",
+      "sizeKB": 134.5,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/adobestock-257501643-2.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-238491803.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/container/tabs/item_1570890135033/par0/image.coreimg.jpeg/1660323785536/adobestock-238491803.jpeg",
+      "alt": "High angle view of hiker sitting on camping chair by campfire in forest",
+      "sizeKB": 347.4,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/adobestock-238491803.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-167833331.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/container/tabs/item_1570890140330/par1/image.coreimg.jpeg/1660323776891/adobestock-167833331.jpeg",
+      "alt": "view from a tent overlooking a billabong in NT",
+      "sizeKB": 257.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/adobestock-167833331.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-257541512.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/container/tabs/item_1570890140330/par4/image.coreimg.jpeg/1660323790279/adobestock-257541512.jpeg",
+      "alt": "Sky at moody dawn visible from inside of tent pitched on top of Frenchman's Cap in Franklin-Gordon Wild Rivers National Park, Tasmania, Australia",
+      "sizeKB": 196.3,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/adobestock-257541512.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "adobestock-178022573.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/container/tabs/item_1570890140330/par5/image.coreimg.jpeg/1660323790119/adobestock-178022573.jpeg",
+      "alt": "Overhead view of meats, pineapple and corn on grill above campfire",
+      "sizeKB": 380.9,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/adobestock-178022573.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "hiker-anapurna.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/container/tabs/item_1570890140330/par7/image.coreimg.jpeg/1660323777083/hiker-anapurna.jpeg",
+      "alt": "Hiker on the trek in Himalayas, Anapurna valley, Nepal",
+      "sizeKB": 401.7,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/hiker-anapurna.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    },
+    {
+      "filename": "equipment-6.jpeg",
+      "sourceUrl": "https://wknd.site/us/en/adventures/riverside-camping-australia/_jcr_content/root/container/container/tabs/item_1570890147607/par0/image.coreimg.jpeg/1660323770039/equipment-6.jpeg",
+      "alt": "",
+      "sizeKB": 276.1,
+      "suggestedDamPath": "/content/dam/eds-agent-demo/us/en/adventures/riverside-camping-australia/equipment-6.jpeg",
+      "usedOnPages": [
+        "us/en/adventures/riverside-camping-australia"
+      ]
+    }
+  ]
+}
