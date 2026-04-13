@@ -17,6 +17,19 @@ export default function decorate(block) {
     });
   }
 
+  // Add navigation dots to the main hero
+  const dots = document.createElement('div');
+  dots.classList.add('retail-hero-dots');
+  const dotCount = 3;
+  for (let i = 0; i < dotCount; i += 1) {
+    const dot = document.createElement('button');
+    dot.classList.add('retail-hero-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+    dots.append(dot);
+  }
+  mainRow.append(dots);
+
   // Second row (if exists): secondary hero panels
   if (rows.length >= 2) {
     const secondRow = rows[1];
