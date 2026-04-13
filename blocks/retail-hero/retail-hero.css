@@ -1,0 +1,138 @@
+.retail-hero-container > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 450px;
+  padding: 0;
+}
+
+.retail-hero-image {
+  flex: 1;
+  min-height: 450px;
+}
+
+.retail-hero-image picture,
+.retail-hero-image p {
+  height: 100%;
+  margin: 0;
+}
+
+.retail-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 450px;
+  border-radius: 20px 0 0 20px;
+}
+
+.retail-hero-content {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.retail-hero-content h1,
+.retail-hero-content h2 {
+  font-family: Graphik, Satoshi, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #000;
+  margin: 0;
+}
+
+.retail-hero-content p {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+.retail-hero-cta {
+  display: inline-block;
+  background: #e71f80;
+  color: #fff !important;
+  padding: 14px 32px;
+  border-radius: 62px;
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+.retail-hero-cta:hover {
+  background: #c82244;
+}
+
+.retail-hero-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.retail-hero-panel {
+  background: linear-gradient(135deg, #f8bbd0 0%, #fce4ec 100%);
+  border-radius: 20px;
+  padding: 40px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.retail-hero-panel h2,
+.retail-hero-panel h3 {
+  font-family: Graphik, Satoshi, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+  margin: 0 0 8px;
+}
+
+.retail-hero-panel p {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.retail-hero-panel img {
+  max-width: 200px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+@media (width < 900px) {
+  .retail-hero-container > div:first-child {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .retail-hero-image img {
+    border-radius: 20px 20px 0 0;
+    min-height: 250px;
+  }
+
+  .retail-hero-secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .retail-hero-content h1,
+  .retail-hero-content h2 {
+    font-size: 32px;
+  }
+}
