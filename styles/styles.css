@@ -264,3 +264,22 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* contributor profile images - circle style */
+main p:has(> img:only-child) + h3 ~ h5,
+main p:has(> img:only-child) + h3 {
+  text-align: center;
+}
+
+main p:has(> img:only-child) + h3 {
+  margin-top: 8px;
+}
+
+main p > img:only-child {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}

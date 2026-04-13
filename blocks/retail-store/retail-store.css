@@ -1,0 +1,170 @@
+.retail-store {
+  position: relative;
+}
+
+.retail-store-scroll {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.retail-store-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.retail-store-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.retail-store-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.retail-store-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+.retail-store-card-image {
+  line-height: 0;
+  background: #f0eeed;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+}
+
+.retail-store-card-image p {
+  margin: 0;
+  height: 100%;
+}
+
+.retail-store-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.retail-store-card-body {
+  padding: 16px 13px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.retail-store-card-body h3,
+.retail-store-card-body h4 {
+  font-family: Graphik, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.retail-store-card-body p {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.retail-store-card-body strong {
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+}
+
+.retail-store-card-body del {
+  color: #999;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.retail-store-card-body em {
+  font-style: normal;
+  color: #e71f80;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.retail-store-cart-btn {
+  display: inline-block;
+  background: #000;
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: 62px;
+  font-family: Graphik, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+.retail-store-cart-btn:hover {
+  background: #333;
+}
+
+/* Navigation Arrows */
+.retail-store-nav {
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  right: -16px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.retail-store-prev,
+.retail-store-next {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s, box-shadow 0.3s;
+}
+
+.retail-store-prev:hover,
+.retail-store-next:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+}
+
+@media (width < 600px) {
+  .retail-store-card {
+    flex: 0 0 260px;
+  }
+
+  .retail-store-card-image {
+    height: 240px;
+  }
+
+  .retail-store-nav {
+    display: none;
+  }
+}

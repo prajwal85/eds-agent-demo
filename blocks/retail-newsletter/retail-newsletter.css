@@ -1,0 +1,79 @@
+.retail-newsletter-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.retail-newsletter {
+  background: #121212;
+  padding: 60px 40px;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.retail-newsletter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.retail-newsletter-inner > div:first-child {
+  flex: 1;
+}
+
+.retail-newsletter-inner > div:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.retail-newsletter h2,
+.retail-newsletter h3 {
+  font-family: Graphik, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.retail-newsletter p {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+}
+
+.retail-newsletter a {
+  display: inline-block;
+  background: #fff;
+  color: #000 !important;
+  padding: 14px 28px;
+  border-radius: 62px;
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+.retail-newsletter a:hover {
+  background: #e0e0e0;
+}
+
+@media (width < 900px) {
+  .retail-newsletter-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .retail-newsletter h2,
+  .retail-newsletter h3 {
+    font-size: 24px;
+  }
+}

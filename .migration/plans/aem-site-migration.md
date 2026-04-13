@@ -1,66 +1,73 @@
-# WKND Homepage Migration Plan
+Let me analyze the existing workspace state and the URLs to build the plan.# WKND Site Migration Plan
 
 ## Overview
 
-Migrate the WKND Adventures and Travel homepage (`https://wknd.site/us/en.html`) to AEM Edge Delivery Services. The page features a hero carousel, featured article teasers, article/adventure card grids, and standard header/footer navigation.
+Migrate 24 pages from the WKND Adventures and Travel site (`https://wknd.site`) to AEM Edge Delivery Services. The pages span 5 distinct page types: homepage, magazine listing, adventures listing, FAQ, about, magazine articles, and adventure detail pages.
 
-## Source Page Analysis
+## Source URLs (24 pages)
 
-**URL:** `https://wknd.site/us/en.html`
-**Title:** WKND Adventures and Travel
+### Homepage (1)
+- `https://wknd.site/us/en.html`
 
-### Identified Sections & Blocks
+### Listing Pages (3)
+- `https://wknd.site/us/en/magazine.html`
+- `https://wknd.site/us/en/adventures.html`
+- `https://wknd.site/us/en/about-us.html`
 
-| # | Section | Block Type | Description |
-|---|---------|-----------|-------------|
-| 1 | Header | Header/Nav | Logo, language toggle, search, mobile hamburger nav |
-| 2 | Hero | Carousel | 3-slide hero slideshow (WKND Adventures, San Diego Surf, Downhill Skiing) |
-| 3 | Featured Article | Teaser (columns) | Two-column: image + text for "Camping in Western Australia" |
-| 4 | Recent Articles | Cards | 4 article cards in grid layout + "All Articles" CTA |
-| 5 | Separator | Default content | Horizontal rule |
-| 6 | Next Adventures | Teaser (columns) | Two-column: text + image for "Climbing New Zealand" |
-| 7 | Adventure Cards | Cards | 4 adventure cards + "All Trips" CTA |
-| 8 | Footer | Footer | Logo, nav links, social icons, copyright |
+### FAQ Page (1)
+- `https://wknd.site/us/en/faqs.html`
 
-### Existing Local Blocks Available
+### Magazine Articles (5)
+- `https://wknd.site/us/en/magazine/san-diego-surf.html`
+- `https://wknd.site/us/en/magazine/western-australia.html`
+- `https://wknd.site/us/en/magazine/guide-la-skateparks.html`
+- `https://wknd.site/us/en/magazine/ski-touring.html`
+- `https://wknd.site/us/en/magazine/arctic-surfing.html`
 
-The workspace already contains these blocks that may be reusable: `accordion`, `cards`, `carousel`, `columns`, `embed`, `footer`, `form`, `fragment`, `header`, `hero`, `modal`, `quote`, `search`, `table`, `tabs`, `video`
-
-## Migration Approach
-
-This migration will use the **`excat:excat-site-migration`** skill, which provides:
-- Intelligent block variant detection and reuse
-- Automatic page template and metadata management
-- Import script generation for content conversion
-- Local preview verification
-
-## Checklist
-
-- [ ] **Site analysis** — Classify the URL and create a page template skeleton
-- [ ] **Page analysis** — Deep-analyze the page to identify content structure, sections, and block variants
-- [ ] **Block mapping** — Map DOM selectors to block variants in the page template
-- [ ] **Block variant management** — Check similarity against existing blocks; create new variants only when needed
-- [ ] **Import infrastructure** — Generate block parsers and page transformers for the content import
-- [ ] **Import script** — Build the combined import script from parsers + transformers
-- [ ] **Content import** — Execute the import to generate HTML content files
-- [ ] **Design system** — Extract and adapt design tokens (colors, fonts, spacing) from the source site
-- [ ] **Preview verification** — Render the migrated page locally and compare against the original
-- [ ] **Visual QA & fixes** — Critique styling differences and iterate on CSS until visually accurate
-
-## Key Considerations
-
-- **Carousel block** already exists locally — verify it supports the 3-slide hero pattern from the source
-- **Cards block** is used twice with different content (articles vs. adventures) — may need variant analysis
-- **Teaser/columns sections** appear twice with mirrored layouts (image-left vs. image-right)
-- **Navigation and footer** should be set up as shared fragments for reuse across future pages
-- The `content/` directory is currently empty — this will be the first migrated page
+### Adventure Detail Pages (14)
+- `https://wknd.site/us/en/adventures/downhill-skiing-wyoming.html`
+- `https://wknd.site/us/en/adventures/climbing-new-zealand.html`
+- `https://wknd.site/us/en/adventures/yosemite-backpacking.html`
+- `https://wknd.site/us/en/adventures/whistler-mountain-biking.html`
+- `https://wknd.site/us/en/adventures/west-coast-cycling.html`
+- `https://wknd.site/us/en/adventures/tahoe-skiing.html`
+- `https://wknd.site/us/en/adventures/bali-surf-camp.html`
+- `https://wknd.site/us/en/adventures/beervana-portland.html`
+- `https://wknd.site/us/en/adventures/colorado-rock-climbing.html`
+- `https://wknd.site/us/en/adventures/cycling-southern-utah.html`
+- `https://wknd.site/us/en/adventures/cycling-tuscany.html`
+- `https://wknd.site/us/en/adventures/gastronomic-marais-tour.html`
+- `https://wknd.site/us/en/adventures/napa-wine-tasting.html`
+- `https://wknd.site/us/en/adventures/riverside-camping-australia.html`
 
 ## Workspace State
 
-- **Blocks:** 16 blocks available locally
-- **Content:** Empty (fresh migration)
-- **Config:** No `page-templates.json` or `metadata.json` yet — will be created during migration
+- **Local blocks (17):** accordion, cards, carousel, columns, embed, footer, form, fragment, header, hero, modal, quote, search, table, tabs, video
+- **Content:** Only `footer.plain.html` exists — fresh migration
+- **Migration config:** No `.migration/project.json` yet
+- **Import infrastructure:** None yet (no parsers, transformers, or templates)
+
+## Migration Approach
+
+This migration uses the **URL List Mode** workflow. The 24 URLs will be grouped into templates by page type, then each template will go through the full migration pipeline: site analysis → page analysis → block mapping → import infrastructure → content import.
+
+## Checklist
+
+- [ ] **Step 0: Initialize Migration Plan** — Detect mode, validate URLs, create migration plan file
+- [ ] **Step 1: Project Setup** — Detect project type (xwalk), configure block library URL
+- [ ] **Step 2: Site Analysis** — Group 24 URLs into template types (homepage, magazine-listing, adventures-listing, about, faq, magazine-article, adventure-detail), create template skeletons in `page-templates.json`
+- [ ] **Step 3: Page Analysis** — Deep-analyze one representative page per template to identify sections, blocks, and authoring decisions. Create block variants as needed.
+- [ ] **Step 4: Block Mapping** — Map DOM selectors to block variants for each template in `page-templates.json`
+- [ ] **Step 5: Import Infrastructure** — Generate block parsers and page transformers for all identified block variants
+- [ ] **Step 6: Content Import** — Generate import scripts per template, bundle, and import all 24 pages to `content/` directory
+
+## Key Considerations
+
+- **Template reuse**: Adventure detail pages (14) likely share the same template, as do magazine articles (5). Efficient grouping reduces analysis work.
+- **Block variant reuse**: The migration will leverage 70% similarity matching to reuse block variants across templates where styling is consistent.
+- **Existing blocks**: 17 local blocks are already available — new variants will be created only when needed.
+- **Previously migrated homepage**: The homepage (`us/en.html`) was migrated in a prior session with 4 block variants (carousel-hero, columns-featured, cards-article, hero-adventure). However, that infrastructure no longer exists in the workspace, so it will be recreated during this migration.
 
 ---
 
-> **To begin execution:** Switch to Execute mode and the `excat:excat-site-migration` skill will orchestrate all steps automatically.
+> **To begin execution:** Switch to Execute mode. The `excat:excat-site-migration` skill will orchestrate all steps automatically for the 24 URLs.

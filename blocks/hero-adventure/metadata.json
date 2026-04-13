@@ -2,38 +2,10 @@
   "variantName": "hero-adventure",
   "baseBlock": "hero",
   "version": "1.0.0",
-  "created": "2026-04-09T04:56:00.000Z",
-  "sourceContext": {
-    "originUrl": "https://wknd.site/us/en.html",
-    "originPage": "WKND homepage",
-    "blockPosition": "middle"
-  },
-  "visualCharacteristics": {
-    "colorScheme": "light",
-    "density": "spacious",
-    "purpose": "adventure-teaser",
-    "imagePattern": "large"
-  },
-  "contentPattern": {
-    "structure": "heading + paragraph + CTA + image",
-    "buttonCount": 1,
-    "imageCount": 1
-  },
-  "reuseGuidance": {
-    "suitableFor": [
-      "adventure/trip teasers",
-      "full-width promotional hero sections",
-      "destination highlight sections"
-    ],
-    "notSuitableFor": [
-      "text-only hero sections",
-      "hero with multiple CTAs",
-      "compact hero banners"
-    ]
-  },
-  "usage": {
-    "pagesUsing": ["/content/us/en"],
-    "reuseCount": 1,
-    "lastUsed": "2026-04-09T04:56:00.000Z"
-  }
+  "created": "2026-04-10T08:10:00.000Z",
+  "sourceContext": { "originUrl": "https://wknd.site/us/en.html", "originPage": "WKND homepage", "blockPosition": "middle" },
+  "visualCharacteristics": { "colorScheme": "light", "density": "spacious", "purpose": "adventure-teaser", "imagePattern": "large" },
+  "contentPattern": { "structure": "heading + paragraph + CTA + image", "buttonCount": 1, "imageCount": 1 },
+  "reuseGuidance": { "suitableFor": ["adventure teasers", "full-width promotional sections"], "notSuitableFor": ["text-only hero", "compact hero banners"] },
+  "usage": { "pagesUsing": ["/content/us/en"], "reuseCount": 1, "lastUsed": "2026-04-10T08:10:00.000Z" }
 }

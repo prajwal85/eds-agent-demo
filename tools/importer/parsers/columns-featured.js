@@ -9,17 +9,16 @@
  *
  * Columns blocks do NOT require field hints (per xwalk hinting rules).
  *
- * Block library structure: 1 row with 2 columns [image | text content]
+ * Block library: 1 row with 2 columns [image | text content]
  */
 export default function parse(element, { document }) {
-  // Extract image from featured teaser
   const img = element.querySelector('.cmp-teaser__image img, .cmp-image__image, img');
   const pretitle = element.querySelector('.cmp-teaser__pretitle');
   const heading = element.querySelector('.cmp-teaser__title, h2');
   const description = element.querySelector('.cmp-teaser__description');
   const ctaLink = element.querySelector('.cmp-teaser__action-link, .cmp-teaser__action-container a');
 
-  // Build image column
+  // Image column
   const imageCol = document.createDocumentFragment();
   if (img) {
     const pic = document.createElement('picture');
@@ -30,7 +29,7 @@ export default function parse(element, { document }) {
     imageCol.appendChild(pic);
   }
 
-  // Build text column
+  // Text column
   const textCol = document.createDocumentFragment();
   if (pretitle) {
     const p = document.createElement('p');

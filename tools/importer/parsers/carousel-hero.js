@@ -8,24 +8,23 @@
  * Selectors from captured DOM: .carousel.cmp-carousel--hero
  *
  * UE Model (carousel-hero-item):
- *   - media_image (reference) → image cell (collapsed: media_imageAlt)
+ *   - media_image (reference) → image cell
+ *   - media_imageAlt (collapsed)
  *   - content_text (richtext) → text content cell
  *
- * Block library structure: Each row = 1 slide with 2 columns [image | text content]
+ * Block library: Each row = 1 slide with 2 columns [image | text content]
  */
 export default function parse(element, { document }) {
-  // Each slide is a .cmp-carousel__item
   const slides = element.querySelectorAll('.cmp-carousel__item, [class*="carousel"][class*="item"][class*="tabpanel"]');
   const cells = [];
 
   slides.forEach((slide) => {
-    // Extract image from the teaser inside each slide
     const img = slide.querySelector('.cmp-teaser__image img, .cmp-image__image, img');
     const heading = slide.querySelector('.cmp-teaser__title, h1, h2, h3');
     const description = slide.querySelector('.cmp-teaser__description, .cmp-teaser__description p');
     const ctaLink = slide.querySelector('.cmp-teaser__action-link, .cmp-teaser__action-container a');
 
-    // Build image cell with field hint
+    // Image cell with field hint
     const imageCell = document.createDocumentFragment();
     imageCell.appendChild(document.createComment(' field:media_image '));
     if (img) {
@@ -37,7 +36,7 @@ export default function parse(element, { document }) {
       imageCell.appendChild(pic);
     }
 
-    // Build text content cell with field hint
+    // Text content cell with field hint
     const textCell = document.createDocumentFragment();
     textCell.appendChild(document.createComment(' field:content_text '));
     if (heading) {

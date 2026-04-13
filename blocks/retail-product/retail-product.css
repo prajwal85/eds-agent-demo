@@ -1,0 +1,120 @@
+.retail-product > div {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 25%);
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.retail-product-image {
+  flex: 1;
+  background: #f5f5f5;
+}
+
+.retail-product-image picture,
+.retail-product-image p {
+  margin: 0;
+  height: 100%;
+}
+
+.retail-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+.retail-product-info {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.retail-product-info h2,
+.retail-product-info h3 {
+  font-family: Graphik, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.retail-product-info h4 {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  color: #e71f80;
+  font-weight: 600;
+  margin: 0;
+}
+
+.retail-product-info p {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.retail-product-info strong {
+  font-size: 24px;
+  color: #000;
+}
+
+.retail-product-original-price {
+  color: #999;
+  font-size: 18px;
+}
+
+.retail-product-try {
+  display: inline-block;
+  border: 2px solid #e71f80;
+  color: #e71f80 !important;
+  padding: 12px 28px;
+  border-radius: 62px;
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.retail-product-try:hover {
+  background: #e71f80;
+  color: #fff !important;
+}
+
+.retail-product-buy {
+  display: inline-block;
+  background: #e71f80;
+  color: #fff !important;
+  padding: 12px 28px;
+  border-radius: 62px;
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.retail-product-buy:hover {
+  background: #c82244;
+}
+
+@media (width < 900px) {
+  .retail-product > div {
+    flex-direction: column;
+  }
+
+  .retail-product-image img {
+    min-height: 250px;
+  }
+}

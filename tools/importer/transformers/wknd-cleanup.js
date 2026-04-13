@@ -13,7 +13,7 @@ export default function transform(hookName, element, payload) {
     WebImporter.DOMUtils.remove(element, [
       '.wknd-sign-in-buttons',
       '.cmp-languagenavigation',
-      '[id*="CybotCookiebotDialog"]',
+      'iframe[title="Adobe ID Syncing iFrame"]',
       'noscript',
     ]);
   }

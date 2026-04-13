@@ -8,10 +8,10 @@
  * Selectors from captured DOM: .image-list.list
  *
  * UE Model (card):
- *   - image (reference) → image cell (collapsed: imageAlt - not present but standard)
+ *   - image (reference) → image cell
  *   - text (richtext) → text content cell
  *
- * Block library structure: Each row = 1 card with 2 columns [image | text content]
+ * Block library: Each row = 1 card with 2 columns [image | text content]
  */
 export default function parse(element, { document }) {
   const items = element.querySelectorAll('.cmp-image-list__item, li.cmp-image-list__item');
@@ -23,7 +23,7 @@ export default function parse(element, { document }) {
     const titleLink = item.querySelector('.cmp-image-list__item-title-link, a.cmp-image-list__item-title-link');
     const descEl = item.querySelector('.cmp-image-list__item-description, span.cmp-image-list__item-description');
 
-    // Build image cell with field hint
+    // Image cell with field hint
     const imageCell = document.createDocumentFragment();
     imageCell.appendChild(document.createComment(' field:image '));
     if (img) {
@@ -35,7 +35,7 @@ export default function parse(element, { document }) {
       imageCell.appendChild(pic);
     }
 
-    // Build text cell with field hint
+    // Text cell with field hint
     const textCell = document.createDocumentFragment();
     textCell.appendChild(document.createComment(' field:text '));
     if (titleLink && titleEl) {

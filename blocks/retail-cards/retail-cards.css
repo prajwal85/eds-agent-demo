@@ -1,0 +1,71 @@
+.retail-cards > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.retail-cards > ul > li {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.retail-cards > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+}
+
+.retail-cards .retail-cards-image {
+  line-height: 0;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.retail-cards .retail-cards-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.retail-cards .retail-cards-body {
+  padding: 16px;
+}
+
+.retail-cards .retail-cards-body h3,
+.retail-cards .retail-cards-body h4 {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 8px;
+}
+
+.retail-cards .retail-cards-body p {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 4px;
+}
+
+.retail-cards .retail-cards-body strong {
+  font-size: 18px;
+  color: #000;
+}
+
+.retail-cards .retail-cards-body del {
+  color: #999;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.retail-cards .retail-cards-body em {
+  color: #e71f80;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+}

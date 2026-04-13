@@ -8,10 +8,11 @@
  * Selectors from captured DOM: .teaser.cmp-teaser--hero.cmp-teaser--imagebottom
  *
  * UE Model (hero-adventure):
- *   - image (reference) → image row (collapsed: imageAlt)
+ *   - image (reference) → image row
+ *   - imageAlt (collapsed)
  *   - text (richtext) → text content row
  *
- * Block library structure: 1 column, row 1 = image, row 2 = text content (heading, description, CTA)
+ * Block library: 1 column, row 1 = image, row 2 = text content
  */
 export default function parse(element, { document }) {
   const img = element.querySelector('.cmp-teaser__image img, .cmp-image__image, img');

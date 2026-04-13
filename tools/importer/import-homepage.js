@@ -11,18 +11,10 @@ import heroAdventureParser from './parsers/hero-adventure.js';
 import wkndCleanupTransformer from './transformers/wknd-cleanup.js';
 import wkndSectionsTransformer from './transformers/wknd-sections.js';
 
-// PARSER REGISTRY
-const parsers = {
-  'carousel-hero': carouselHeroParser,
-  'columns-featured': columnsFeaturedParser,
-  'cards-article': cardsArticleParser,
-  'hero-adventure': heroAdventureParser,
-};
-
 // PAGE TEMPLATE CONFIGURATION
 const PAGE_TEMPLATE = {
   name: 'homepage',
-  description: 'WKND Adventures homepage with hero carousel, featured article teasers, article and adventure card grids',
+  description: 'WKND homepage with hero carousel, featured teasers, and card grids',
   urls: ['https://wknd.site/us/en.html'],
   blocks: [
     {
@@ -73,9 +65,17 @@ const PAGE_TEMPLATE = {
       selector: 'main.cmp-layout-container--fixed:nth-of-type(2)',
       style: null,
       blocks: ['cards-article'],
-      defaultContent: ['.title:has(.cmp-title__text)', '.button.cmp-button--primary', '.separator'],
+      defaultContent: ['.title', '.button.cmp-button--primary', '.separator'],
     },
   ],
+};
+
+// PARSER REGISTRY
+const parsers = {
+  'carousel-hero': carouselHeroParser,
+  'columns-featured': columnsFeaturedParser,
+  'cards-article': cardsArticleParser,
+  'hero-adventure': heroAdventureParser,
 };
 
 // TRANSFORMER REGISTRY
@@ -84,15 +84,11 @@ const transformers = [
   ...(PAGE_TEMPLATE.sections && PAGE_TEMPLATE.sections.length > 1 ? [wkndSectionsTransformer] : []),
 ];
 
-/**
- * Execute all page transformers for a specific hook
- */
 function executeTransformers(hookName, element, payload) {
   const enhancedPayload = {
     ...payload,
     template: PAGE_TEMPLATE,
   };
-
   transformers.forEach((transformerFn) => {
     try {
       transformerFn.call(null, hookName, element, enhancedPayload);
@@ -102,18 +98,11 @@ function executeTransformers(hookName, element, payload) {
   });
 }
 
-/**
- * Find all blocks on the page based on the embedded template configuration
- */
 function findBlocksOnPage(document, template) {
   const pageBlocks = [];
-
   template.blocks.forEach((blockDef) => {
     blockDef.instances.forEach((selector) => {
       const elements = document.querySelectorAll(selector);
-      if (elements.length === 0) {
-        console.warn(`Block "${blockDef.name}" selector not found: ${selector}`);
-      }
       elements.forEach((element) => {
         pageBlocks.push({
           name: blockDef.name,
@@ -124,24 +113,18 @@ function findBlocksOnPage(document, template) {
       });
     });
   });
-
-  console.log(`Found ${pageBlocks.length} block instances on page`);
   return pageBlocks;
 }
 
 export default {
   transform: (payload) => {
     const { document, url, params } = payload;
-
     const main = document.body;
 
-    // 1. Execute beforeTransform transformers (initial cleanup)
     executeTransformers('beforeTransform', main, payload);
 
-    // 2. Find blocks on page using embedded template
     const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
 
-    // 3. Parse each block using registered parsers
     pageBlocks.forEach((block) => {
       const parser = parsers[block.name];
       if (parser) {
@@ -150,22 +133,17 @@ export default {
         } catch (e) {
           console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
         }
-      } else {
-        console.warn(`No parser found for block: ${block.name}`);
       }
     });
 
-    // 4. Execute afterTransform transformers (final cleanup + section breaks)
     executeTransformers('afterTransform', main, payload);
 
-    // 5. Apply WebImporter built-in rules
     const hr = document.createElement('hr');
     main.appendChild(hr);
     WebImporter.rules.createMetadata(main, document);
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 
-    // 6. Generate sanitized path
     const path = WebImporter.FileUtils.sanitizePath(
       new URL(params.originalURL).pathname.replace(/\/$/, '').replace(/\.html$/, ''),
     );

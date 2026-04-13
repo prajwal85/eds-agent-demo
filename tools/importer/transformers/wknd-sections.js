@@ -10,7 +10,7 @@ const TransformHook = { beforeTransform: 'beforeTransform', afterTransform: 'aft
 
 export default function transform(hookName, element, payload) {
   if (hookName === TransformHook.afterTransform) {
-    const { document } = element.ownerDocument ? { document: element.ownerDocument } : { document };
+    const doc = element.ownerDocument || document;
     const sections = payload && payload.template && payload.template.sections;
     if (!sections || sections.length < 2) return;
 
@@ -30,16 +30,15 @@ export default function transform(hookName, element, payload) {
 
       if (sectionEl) {
         // Insert <hr> before this section element
-        const hr = (element.ownerDocument || document).createElement('hr');
+        const hr = doc.createElement('hr');
         sectionEl.parentNode.insertBefore(hr, sectionEl);
 
         // Add section-metadata if section has a style
         if (section.style) {
           const sectionMetadata = WebImporter.Blocks.createBlock(
-            element.ownerDocument || document,
+            doc,
             { name: 'Section Metadata', cells: { style: section.style } },
           );
-          // Insert section-metadata after the section's last element
           if (sectionEl.nextSibling) {
             sectionEl.parentNode.insertBefore(sectionMetadata, sectionEl.nextSibling);
           } else {

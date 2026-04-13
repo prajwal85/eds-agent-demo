@@ -2,39 +2,10 @@
   "variantName": "cards-article",
   "baseBlock": "cards",
   "version": "1.0.0",
-  "created": "2026-04-09T04:56:00.000Z",
-  "sourceContext": {
-    "originUrl": "https://wknd.site/us/en.html",
-    "originPage": "WKND homepage",
-    "blockPosition": "middle"
-  },
-  "visualCharacteristics": {
-    "colorScheme": "light",
-    "density": "compact",
-    "purpose": "article-grid",
-    "imagePattern": "large"
-  },
-  "contentPattern": {
-    "structure": "image + title + description per card",
-    "buttonCount": 0,
-    "imageCount": 1
-  },
-  "reuseGuidance": {
-    "suitableFor": [
-      "article listing grids",
-      "adventure/trip card grids",
-      "blog post previews",
-      "content teasers with images"
-    ],
-    "notSuitableFor": [
-      "icon-based feature cards",
-      "pricing cards",
-      "cards without images"
-    ]
-  },
-  "usage": {
-    "pagesUsing": ["/content/us/en"],
-    "reuseCount": 1,
-    "lastUsed": "2026-04-09T04:56:00.000Z"
-  }
+  "created": "2026-04-10T08:10:00.000Z",
+  "sourceContext": { "originUrl": "https://wknd.site/us/en.html", "originPage": "WKND homepage", "blockPosition": "middle" },
+  "visualCharacteristics": { "colorScheme": "light", "density": "compact", "purpose": "article-grid", "imagePattern": "large" },
+  "contentPattern": { "structure": "image + title + description per card", "buttonCount": 0, "imageCount": 1 },
+  "reuseGuidance": { "suitableFor": ["article listing grids", "adventure card grids", "blog post previews"], "notSuitableFor": ["icon-based cards", "pricing cards"] },
+  "usage": { "pagesUsing": ["/content/us/en"], "reuseCount": 1, "lastUsed": "2026-04-10T08:10:00.000Z" }
 }
