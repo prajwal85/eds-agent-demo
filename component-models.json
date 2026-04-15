@@ -426,6 +426,189 @@
     ]
   },
   {
+    "id": "retail-card-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-featured-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Product Details",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-hero-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-home-featured-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Product Details",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-home-flash-sales",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "heading_text",
+        "value": "",
+        "label": "Title & Timer",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "categories_text",
+        "value": "",
+        "label": "Categories",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-newsletter",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "heading_text",
+        "value": "",
+        "label": "Heading",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "cta_text",
+        "value": "",
+        "label": "CTA Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-product",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Product Details",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-store-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Product Details",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-testimonial-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Testimonial",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "retail-tip-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Article Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Article Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "search",
     "fields": [
       {
