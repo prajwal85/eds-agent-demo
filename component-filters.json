@@ -19,6 +19,16 @@
       "hero",
       "image",
       "quote",
+      "retail-cards",
+      "retail-featured",
+      "retail-hero",
+      "retail-home-featured",
+      "retail-home-flash-sales",
+      "retail-newsletter",
+      "retail-product",
+      "retail-store",
+      "retail-testimonials",
+      "retail-tips",
       "search",
       "tabs",
       "table",
@@ -85,6 +95,48 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "retail-cards",
+    "components": [
+      "retail-card-item"
+    ]
+  },
+  {
+    "id": "retail-featured",
+    "components": [
+      "retail-featured-item"
+    ]
+  },
+  {
+    "id": "retail-hero",
+    "components": [
+      "retail-hero-item"
+    ]
+  },
+  {
+    "id": "retail-home-featured",
+    "components": [
+      "retail-home-featured-item"
+    ]
+  },
+  {
+    "id": "retail-store",
+    "components": [
+      "retail-store-item"
+    ]
+  },
+  {
+    "id": "retail-testimonials",
+    "components": [
+      "retail-testimonial-item"
+    ]
+  },
+  {
+    "id": "retail-tips",
+    "components": [
+      "retail-tip-item"
     ]
   },
   {
