@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/academics/academic-experience",
+  "path": "academics/academic-experience",
+  "timestamp": "2026-04-22T12:32:08.467Z",
+  "title": "Academic Experience | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

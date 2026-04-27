@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/about/facts-and-figures",
+  "path": "about/facts-and-figures",
+  "timestamp": "2026-04-22T12:31:45.991Z",
+  "title": "Facts & Figures | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "columns-resource"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/campus-life/student-involvement",
+  "path": "campus-life/student-involvement",
+  "timestamp": "2026-04-22T12:32:59.268Z",
+  "title": "Student Involvement | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

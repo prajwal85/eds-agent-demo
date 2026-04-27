@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/about/mission-and-values",
+  "path": "about/mission-and-values",
+  "timestamp": "2026-04-22T12:32:02.324Z",
+  "title": "Mission & Values | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "columns-resource"
+  ]
+}

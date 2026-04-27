@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/energy/business-economy",
+  "path": "energy/business-economy",
+  "timestamp": "2026-04-22T12:33:21.588Z",
+  "title": "Texas Energy Business & Economy | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

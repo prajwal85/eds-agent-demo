@@ -1,0 +1,33 @@
+.columns-outro > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-outro img {
+  width: 100%;
+}
+
+.columns-outro > div > div {
+  order: 1;
+}
+
+.columns-outro > div > .columns-outro-img-col {
+  order: 0;
+}
+
+.columns-outro > div > .columns-outro-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-outro > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns-outro > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/campus-life/health-and-wellness",
+  "path": "campus-life/health-and-wellness",
+  "timestamp": "2026-04-22T12:31:41.233Z",
+  "title": "Health & Well-being | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

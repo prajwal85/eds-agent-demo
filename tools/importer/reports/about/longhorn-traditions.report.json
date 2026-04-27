@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/about/longhorn-traditions",
+  "path": "about/longhorn-traditions",
+  "timestamp": "2026-04-22T12:31:51.429Z",
+  "title": "Longhorn Traditions | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

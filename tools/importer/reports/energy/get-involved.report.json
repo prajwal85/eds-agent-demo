@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/energy/get-involved",
+  "path": "energy/get-involved",
+  "timestamp": "2026-04-22T12:33:36.313Z",
+  "title": "Texas Energy Get Involved | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner"
+  ]
+}

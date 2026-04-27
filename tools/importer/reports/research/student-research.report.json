@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/research/student-research",
+  "path": "research/student-research",
+  "timestamp": "2026-04-22T12:33:42.180Z",
+  "title": "Student Research | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource"
+  ]
+}

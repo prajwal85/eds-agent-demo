@@ -276,10 +276,7 @@ main p:has(> img:only-child) + h3 {
 }
 
 main p > img:only-child {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
   display: block;
-  margin: 0 auto;
 }

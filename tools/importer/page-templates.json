@@ -2,116 +2,255 @@
   "templates": [
     {
       "name": "homepage",
-      "urls": ["https://wknd.site/us/en.html"],
-      "description": "WKND homepage with hero carousel, featured teasers, and card grids",
+      "urls": [
+        "https://www.utexas.edu/"
+      ],
+      "description": "University homepage with hero video, news stories, impact sections, and call-to-action outro",
       "blocks": [
         {
-          "name": "carousel-hero",
-          "instances": [".carousel.cmp-carousel--hero"]
-        },
-        {
-          "name": "columns-featured",
-          "instances": [".teaser.cmp-teaser--featured"]
+          "name": "hero-video",
+          "instances": [
+            ".block-bundle-utexas-hero-video",
+            ".block-coresite-homepagehero"
+          ]
         },
         {
           "name": "cards-article",
-          "instances": [".image-list.list"]
+          "instances": [
+            ".block-coresite-stories"
+          ]
         },
         {
-          "name": "hero-adventure",
-          "instances": [".teaser.cmp-teaser--hero.cmp-teaser--imagebottom"]
+          "name": "columns-promo",
+          "instances": [
+            "#block-coretheme-homepagemidpagepromo"
+          ]
+        },
+        {
+          "name": "columns-impact",
+          "instances": [
+            ".block-coresite-impact-1",
+            ".block-coresite-impact-2",
+            ".block-coresite-impact-3"
+          ]
+        },
+        {
+          "name": "columns-outro",
+          "instances": [
+            ".block-homepage-outro"
+          ]
         }
       ],
       "sections": [
         {
           "id": "section-1",
-          "name": "Hero Carousel",
-          "selector": ".carousel.cmp-carousel--hero",
+          "name": "Hero Video + Headline",
+          "selector": ".block-bundle-utexas-hero-video",
           "style": null,
-          "blocks": ["carousel-hero"],
+          "blocks": [
+            "hero-video"
+          ],
           "defaultContent": []
         },
         {
           "id": "section-2",
-          "name": "Featured Content and Recent Articles",
-          "selector": "main.cmp-layout-container--fixed:nth-of-type(1)",
+          "name": "University Stories / News Cards",
+          "selector": ".block-coresite-stories",
           "style": null,
-          "blocks": ["columns-featured", "cards-article"],
-          "defaultContent": [".title.cmp-title--underline", ".button.cmp-button--primary", ".separator"]
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".action-links"
+          ]
         },
         {
           "id": "section-3",
-          "name": "Climbing New Zealand Teaser",
-          "selector": ".teaser.cmp-teaser--hero.cmp-teaser--imagebottom",
-          "style": null,
-          "blocks": ["hero-adventure"],
+          "name": "Mid-page Promo - UT Dell Campus",
+          "selector": "#block-coretheme-homepagemidpagepromo",
+          "style": "burnt-orange",
+          "blocks": [
+            "columns-promo"
+          ],
           "defaultContent": []
         },
         {
           "id": "section-4",
-          "name": "Adventure Cards",
-          "selector": "main.cmp-layout-container--fixed:nth-of-type(2)",
+          "name": "Impact Intro",
+          "selector": ".block-coresite-impact-0",
           "style": null,
-          "blocks": ["cards-article"],
-          "defaultContent": [".title", ".button.cmp-button--primary", ".separator"]
+          "blocks": [],
+          "defaultContent": [
+            ".section-title",
+            "p"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "The Longhorn Experience",
+          "selector": ".block-coresite-impact-1",
+          "style": null,
+          "blocks": [
+            "columns-impact"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Big Ideas Bigger Impact",
+          "selector": ".block-coresite-impact-2",
+          "style": null,
+          "blocks": [
+            "columns-impact"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Learning With Purpose",
+          "selector": ".block-coresite-impact-3",
+          "style": null,
+          "blocks": [
+            "columns-impact"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "For Texas For the Future",
+          "selector": ".block-homepage-outro",
+          "style": "burnt-orange",
+          "blocks": [
+            "columns-outro"
+          ],
+          "defaultContent": []
         }
       ]
     },
     {
-      "name": "magazine-listing",
-      "urls": ["https://wknd.site/us/en/magazine.html"],
-      "description": "Magazine section listing page with article teasers",
-      "blocks": []
-    },
-    {
-      "name": "adventures-listing",
-      "urls": ["https://wknd.site/us/en/adventures.html"],
-      "description": "Adventures section listing page with adventure cards",
-      "blocks": []
-    },
-    {
-      "name": "faq-page",
-      "urls": ["https://wknd.site/us/en/faqs.html"],
-      "description": "FAQ page with expandable questions and answers",
-      "blocks": []
-    },
-    {
-      "name": "about-page",
-      "urls": ["https://wknd.site/us/en/about-us.html"],
-      "description": "About Us page with company information and team details",
-      "blocks": []
-    },
-    {
-      "name": "magazine-article",
+      "name": "resource-hub",
       "urls": [
-        "https://wknd.site/us/en/magazine/san-diego-surf.html",
-        "https://wknd.site/us/en/magazine/western-australia.html",
-        "https://wknd.site/us/en/magazine/guide-la-skateparks.html",
-        "https://wknd.site/us/en/magazine/ski-touring.html",
-        "https://wknd.site/us/en/magazine/arctic-surfing.html"
+        "https://www.utexas.edu/faculty-and-staff-resources",
+        "https://www.utexas.edu/family-and-visitor-resources",
+        "https://www.utexas.edu/alumni-resources"
       ],
-      "description": "Magazine article page with hero image, article content, and related articles",
+      "description": "Resource hub page with categorized links and information for specific audiences",
+      "blocks": [
+        {
+          "name": "columns-resource",
+          "instances": [".utexas-layout--twocol-wrapper"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Page Content",
+          "selector": ".layout-builder__region",
+          "style": null,
+          "blocks": ["columns-resource"],
+          "defaultContent": ["h1"]
+        }
+      ]
+    },
+    {
+      "name": "section-landing",
+      "urls": [
+        "https://www.utexas.edu/apply",
+        "https://www.utexas.edu/about-texas",
+        "https://www.utexas.edu/energy",
+        "https://www.utexas.edu/research",
+        "https://www.utexas.edu/entrepreneurship",
+        "https://www.utexas.edu/medical-center",
+        "https://www.utexas.edu/impact-on-texas",
+        "https://www.utexas.edu/military",
+        "https://www.utexas.edu/campus-carry",
+        "https://www.utexas.edu/campus-life/health-and-wellness"
+      ],
+      "description": "Section landing page with hero banner, overview content, featured cards, and navigation to sub-pages",
       "blocks": []
     },
     {
-      "name": "adventure-detail",
+      "name": "about-subpage",
       "urls": [
-        "https://wknd.site/us/en/adventures/downhill-skiing-wyoming.html",
-        "https://wknd.site/us/en/adventures/climbing-new-zealand.html",
-        "https://wknd.site/us/en/adventures/yosemite-backpacking.html",
-        "https://wknd.site/us/en/adventures/whistler-mountain-biking.html",
-        "https://wknd.site/us/en/adventures/west-coast-cycling.html",
-        "https://wknd.site/us/en/adventures/tahoe-skiing.html",
-        "https://wknd.site/us/en/adventures/bali-surf-camp.html",
-        "https://wknd.site/us/en/adventures/beervana-portland.html",
-        "https://wknd.site/us/en/adventures/colorado-rock-climbing.html",
-        "https://wknd.site/us/en/adventures/cycling-southern-utah.html",
-        "https://wknd.site/us/en/adventures/cycling-tuscany.html",
-        "https://wknd.site/us/en/adventures/gastronomic-marais-tour.html",
-        "https://wknd.site/us/en/adventures/napa-wine-tasting.html",
-        "https://wknd.site/us/en/adventures/riverside-camping-australia.html"
+        "https://www.utexas.edu/about/facts-and-figures",
+        "https://www.utexas.edu/about/longhorn-traditions",
+        "https://www.utexas.edu/about/leadership",
+        "https://www.utexas.edu/about/mission-and-values"
       ],
-      "description": "Adventure detail page with hero image, itinerary details, and booking info",
+      "description": "About section sub-page with detailed content, images, and supporting information",
+      "blocks": []
+    },
+    {
+      "name": "academics-subpage",
+      "urls": [
+        "https://www.utexas.edu/academics/academic-experience",
+        "https://www.utexas.edu/academics/areas-of-study",
+        "https://www.utexas.edu/academics/texas-statement-academic-integrity"
+      ],
+      "description": "Academics section sub-page with educational content, program listings, or policy statements",
+      "blocks": []
+    },
+    {
+      "name": "campus-life-subpage",
+      "urls": [
+        "https://www.utexas.edu/campus-life/arts-and-culture",
+        "https://www.utexas.edu/campus-life/campus-destinations",
+        "https://www.utexas.edu/campus-life/health-and-wellbeing",
+        "https://www.utexas.edu/campus-life/housing-and-dining",
+        "https://www.utexas.edu/campus-life/life-in-austin",
+        "https://www.utexas.edu/campus-life/report-misconduct",
+        "https://www.utexas.edu/campus-life/safety-and-security",
+        "https://www.utexas.edu/campus-life/student-involvement",
+        "https://www.utexas.edu/campus-life/health-and-wellbeing/health-faculty-staff",
+        "https://www.utexas.edu/campus-life/health-and-wellbeing/health-campuswide-resources"
+      ],
+      "description": "Campus life sub-page with topic-specific content, resources, and related links",
+      "blocks": []
+    },
+    {
+      "name": "energy-subpage",
+      "urls": [
+        "https://www.utexas.edu/energy/science-engineering",
+        "https://www.utexas.edu/energy/business-economy",
+        "https://www.utexas.edu/energy/law-policy",
+        "https://www.utexas.edu/energy/education",
+        "https://www.utexas.edu/energy/get-involved"
+      ],
+      "description": "Energy initiative sub-page with topic-focused content and program details",
+      "blocks": []
+    },
+    {
+      "name": "research-subpage",
+      "urls": [
+        "https://www.utexas.edu/research/student-research",
+        "https://www.utexas.edu/research/overview",
+        "https://www.utexas.edu/research/medical-center"
+      ],
+      "description": "Research section sub-page with research area details, statistics, and highlights",
+      "blocks": []
+    },
+    {
+      "name": "policy-page",
+      "urls": [
+        "https://www.utexas.edu/contact-us",
+        "https://www.utexas.edu/jobs",
+        "https://www.utexas.edu/policies-and-reporting",
+        "https://www.utexas.edu/site-policies",
+        "https://www.utexas.edu/state-and-system-resources",
+        "https://www.utexas.edu/university-honor-code",
+        "https://www.utexas.edu/fraud-waste-or-abuse",
+        "https://www.utexas.edu/compact-with-texans"
+      ],
+      "description": "Policy, compliance, or informational page with text-heavy content and reference links",
+      "blocks": []
+    },
+    {
+      "name": "campus-carry-subpage",
+      "urls": [
+        "https://www.utexas.edu/campus-carry/appeals-process",
+        "https://www.utexas.edu/campus-carry/faqs"
+      ],
+      "description": "Campus carry policy sub-page with detailed policy information or FAQ content",
       "blocks": []
     }
   ]

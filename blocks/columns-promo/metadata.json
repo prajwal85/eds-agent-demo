@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-22T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.utexas.edu/",
+    "originPage": "UT Austin homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "promo-callout",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional callout sections",
+      "mid-page featured content with dark background",
+      "announcement banners with image"
+    ],
+    "notSuitableFor": [
+      "light-background columns",
+      "multi-row layouts",
+      "stats-heavy sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-22T10:06:00.000Z"
+  }
+}

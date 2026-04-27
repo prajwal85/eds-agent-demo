@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-outro",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-22T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.utexas.edu/",
+    "originPage": "UT Austin homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "impact-outro",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + CTA + stats + video",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "closing impact sections with statistics",
+      "outro sections with video and metrics",
+      "call-to-action sections with dark background"
+    ],
+    "notSuitableFor": [
+      "light-background layouts",
+      "image-focused columns",
+      "simple text columns"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-22T10:06:00.000Z"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/",
+  "path": "index",
+  "timestamp": "2026-04-26T11:24:55.843Z",
+  "title": "The University of Texas at Austin",
+  "template": "homepage",
+  "blocks": [
+    "hero-video",
+    "cards-article",
+    "columns-promo",
+    "columns-impact",
+    "columns-impact",
+    "columns-impact",
+    "columns-outro"
+  ]
+}

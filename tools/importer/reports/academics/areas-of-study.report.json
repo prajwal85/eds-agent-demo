@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/academics/areas-of-study",
+  "path": "academics/areas-of-study",
+  "timestamp": "2026-04-22T12:32:15.104Z",
+  "title": "Areas of Study | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "columns-resource"
+  ]
+}

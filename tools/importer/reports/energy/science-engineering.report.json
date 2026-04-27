@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/energy/science-engineering",
+  "path": "energy/science-engineering",
+  "timestamp": "2026-04-22T12:33:16.839Z",
+  "title": "Texas Energy Science & Engineering | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

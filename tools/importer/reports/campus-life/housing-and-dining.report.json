@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/campus-life/housing-and-dining",
+  "path": "campus-life/housing-and-dining",
+  "timestamp": "2026-04-22T12:32:40.714Z",
+  "title": "Housing & Dining | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

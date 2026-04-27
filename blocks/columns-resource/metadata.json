@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-resource",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-22T10:55:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.utexas.edu/faculty-and-staff-resources",
+    "originPage": "UT Austin Faculty & Staff Resources",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "resource-links",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + link list per column",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["resource hub pages", "link directory pages", "two-column link lists"],
+    "notSuitableFor": ["image-heavy layouts", "stats sections", "promotional content"]
+  },
+  "usage": {
+    "pagesUsing": ["/faculty-and-staff-resources"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-22T10:55:00.000Z"
+  }
+}

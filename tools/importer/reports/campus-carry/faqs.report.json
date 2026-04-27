@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/campus-carry/faqs",
+  "path": "campus-carry/faqs",
+  "timestamp": "2026-04-22T12:34:44.138Z",
+  "title": "Campus Carry FAQs | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "columns-resource"
+  ]
+}

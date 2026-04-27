@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/energy/law-policy",
+  "path": "energy/law-policy",
+  "timestamp": "2026-04-22T12:33:25.860Z",
+  "title": "Texas Energy Law & Policy | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

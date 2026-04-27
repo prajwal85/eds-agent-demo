@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/faculty-and-staff-resources",
+  "path": "faculty-and-staff-resources",
+  "timestamp": "2026-04-22T10:58:39.415Z",
+  "title": "Faculty and Staff Resources | University of Texas at Austin",
+  "template": "resource-hub",
+  "blocks": [
+    "columns-resource",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

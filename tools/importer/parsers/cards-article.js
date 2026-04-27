@@ -1,60 +1,48 @@
 /* eslint-disable */
 /* global WebImporter */
-
 /**
- * Parser: cards-article
- * Base block: cards
- * Source: https://wknd.site/us/en.html
- * Selectors from captured DOM: .image-list.list
- *
- * UE Model (card):
- *   - image (reference) → image cell
- *   - text (richtext) → text content cell
- *
- * Block library: Each row = 1 card with 2 columns [image | text content]
+ * Parser for cards-article. Base: cards. Source: https://www.utexas.edu/
+ * Extracts news story cards from university-stories section.
+ * Selectors from captured DOM: .block-coresite-stories .university-stories
+ * xwalk fields per card: image (reference, collapsed imageAlt), text (richtext)
+ * Container block: each card = 1 row with 2 columns (image | text)
  */
 export default function parse(element, { document }) {
-  const items = element.querySelectorAll('.cmp-image-list__item, li.cmp-image-list__item');
+  // Find all story card links
+  // Found in DOM: .university-stories__linked-box containing .card elements
+  const cardLinks = element.querySelectorAll('.university-stories__linked-box');
+
   const cells = [];
 
-  items.forEach((item) => {
-    const img = item.querySelector('.cmp-image-list__item-image img, .cmp-image__image, img');
-    const titleEl = item.querySelector('.cmp-image-list__item-title, .cmp-image-list__item-title-link span');
-    const titleLink = item.querySelector('.cmp-image-list__item-title-link, a.cmp-image-list__item-title-link');
-    const descEl = item.querySelector('.cmp-image-list__item-description, span.cmp-image-list__item-description');
+  cardLinks.forEach((cardLink) => {
+    const img = cardLink.querySelector('.image-wrapper img');
+    const headline = cardLink.querySelector('.headline, .content-wrapper .headline');
+    const href = cardLink.getAttribute('href');
 
-    // Image cell with field hint
-    const imageCell = document.createDocumentFragment();
-    imageCell.appendChild(document.createComment(' field:image '));
+    // Column 1: Image (with field hint)
+    const imgFrag = document.createDocumentFragment();
+    imgFrag.appendChild(document.createComment(' field:image '));
     if (img) {
-      const pic = document.createElement('picture');
-      const newImg = document.createElement('img');
-      newImg.src = img.src;
-      newImg.alt = img.alt || '';
-      pic.appendChild(newImg);
-      imageCell.appendChild(pic);
+      imgFrag.appendChild(img.cloneNode(true));
     }
 
-    // Text cell with field hint
-    const textCell = document.createDocumentFragment();
-    textCell.appendChild(document.createComment(' field:text '));
-    if (titleLink && titleEl) {
-      const p = document.createElement('p');
-      const a = document.createElement('a');
-      a.href = titleLink.href;
-      a.textContent = titleEl.textContent.trim();
-      const strong = document.createElement('strong');
-      strong.appendChild(a);
-      p.appendChild(strong);
-      textCell.appendChild(p);
-    }
-    if (descEl) {
-      const p = document.createElement('p');
-      p.textContent = descEl.textContent.trim();
-      textCell.appendChild(p);
+    // Column 2: Text content (with field hint)
+    const textFrag = document.createDocumentFragment();
+    textFrag.appendChild(document.createComment(' field:text '));
+    if (headline) {
+      const h3 = document.createElement('h3');
+      if (href) {
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = headline.textContent.trim();
+        h3.appendChild(link);
+      } else {
+        h3.textContent = headline.textContent.trim();
+      }
+      textFrag.appendChild(h3);
     }
 
-    cells.push([imageCell, textCell]);
+    cells.push([imgFrag, textFrag]);
   });
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'cards-article', cells });

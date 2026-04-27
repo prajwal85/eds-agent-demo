@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/impact-on-texas",
+  "path": "impact-on-texas",
+  "timestamp": "2026-04-22T12:31:27.963Z",
+  "title": "Impact on Texas | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

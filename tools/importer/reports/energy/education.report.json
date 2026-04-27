@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/energy/education",
+  "path": "energy/education",
+  "timestamp": "2026-04-22T12:33:30.279Z",
+  "title": "Texas Energy Education | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "hero-banner",
+    "columns-resource",
+    "columns-resource",
+    "columns-resource"
+  ]
+}

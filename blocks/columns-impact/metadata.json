@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-impact",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-22T10:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.utexas.edu/",
+    "originPage": "UT Austin homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "impact-stats",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraph + CTA + stats",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "impact/stats sections with image",
+      "two-column feature highlights with metrics",
+      "differentiator sections"
+    ],
+    "notSuitableFor": [
+      "text-only columns",
+      "multi-row layouts",
+      "icon-based feature grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-22T10:06:00.000Z"
+  }
+}

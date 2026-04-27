@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/campus-life/arts-and-culture",
+  "path": "campus-life/arts-and-culture",
+  "timestamp": "2026-04-22T12:32:25.306Z",
+  "title": "Arts & Culture | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "columns-resource",
+    "columns-resource"
+  ]
+}

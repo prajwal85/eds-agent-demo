@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.utexas.edu/research/medical-center",
+  "path": "research/medical-center",
+  "timestamp": "2026-04-22T15:03:32.645Z",
+  "title": "TEXAS Medical Center | University of Texas at Austin",
+  "template": "interior",
+  "blocks": [
+    "columns-resource"
+  ]
+}
