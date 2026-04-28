@@ -200,6 +200,21 @@
     ]
   },
   {
+    "id": "sticky-panels",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
     "id": "table",
     "components": [
       "table-row"

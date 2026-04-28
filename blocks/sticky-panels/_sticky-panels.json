@@ -1,0 +1,32 @@
+{
+  "definitions": [
+    {
+      "title": "Sticky Panels",
+      "id": "sticky-panels",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "columns": "2",
+              "rows": "3"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "sticky-panels",
+      "fields": [
+        { "component": "text", "valueType": "number", "name": "columns", "value": "2", "label": "Columns" },
+        { "component": "text", "valueType": "number", "name": "rows", "value": "3", "label": "Rows" }
+      ]
+    }
+  ],
+  "filters": [
+    { "id": "sticky-panels", "components": ["column"] },
+    { "id": "column", "components": ["text", "image", "button", "title"] }
+  ]
+}

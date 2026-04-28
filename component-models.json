@@ -766,6 +766,25 @@
     ]
   },
   {
+    "id": "sticky-panels",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "2",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "3",
+        "label": "Rows"
+      }
+    ]
+  },
+  {
     "id": "table",
     "fields": [
       {

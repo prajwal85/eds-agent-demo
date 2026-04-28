@@ -3,25 +3,103 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .cards-article > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  background-color: var(--burnt-orange, #bf5700);
+  overflow: hidden;
+  position: relative;
 }
 
-.cards-article .cards-article-card-body {
-  margin: 16px;
+.cards-article > ul > li a {
+  color: white;
+  text-decoration: none;
 }
 
-.cards-article .cards-article-card-image {
-  line-height: 0;
+.cards-article > ul > li a:hover {
+  text-decoration: underline;
+}
+
+.cards-article .cards-article-card-body h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
 
 .cards-article > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+/* Mobile: stacked cards */
+.cards-article .cards-article-card-body {
+  padding: 16px;
+}
+
+/* Desktop: 2-column grid — left has 2 stacked, right has 1 tall */
+@media (width >= 900px) {
+  .cards-article > ul {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /* Card 1 (first li) = prominent card on RIGHT spanning both rows */
+  .cards-article > ul > li:first-child {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .cards-article > ul > li:first-child img {
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+  }
+
+  .cards-article > ul > li:first-child .cards-article-card-body:last-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  }
+
+  .cards-article > ul > li:first-child h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Cards 2 & 3 (secondary) = LEFT column, horizontal layout (image left, text right) */
+  .cards-article > ul > li:nth-child(2),
+  .cards-article > ul > li:nth-child(3) {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-article > ul > li:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .cards-article > ul > li:nth-child(3) {
+    grid-row: 2;
+  }
+
+  .cards-article > ul > li:nth-child(2) .cards-article-card-body:last-child,
+  .cards-article > ul > li:nth-child(3) .cards-article-card-body:last-child {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+  }
+
+  .cards-article > ul > li:nth-child(2) img,
+  .cards-article > ul > li:nth-child(3) img {
+    aspect-ratio: 4 / 3;
+    height: 100%;
+    object-fit: cover;
+  }
 }

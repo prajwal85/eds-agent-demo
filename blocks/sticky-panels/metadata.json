@@ -1,0 +1,31 @@
+{
+  "variantName": "sticky-panels",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-28T03:40:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.utexas.edu/",
+    "originPage": "UT Austin homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "sticky-scroll-panels",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "multiple rows of image + heading + paragraph + CTA + stats",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["impact sections with sticky images", "differentiator panels", "feature showcases with scroll effect"],
+    "notSuitableFor": ["simple two-column layouts", "single-panel content", "text-only sections"]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-28T03:40:00.000Z"
+  }
+}
