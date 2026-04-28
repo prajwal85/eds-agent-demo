@@ -3,8 +3,6 @@ export default function decorate(block) {
   // Row 0: poster image, Row 1: video link, Row 2: headline text
   const imageRow = rows[0];
   const videoRow = rows[1];
-  const textRow = rows[2];
-
   // Check for video link in video row
   const link = videoRow?.querySelector('a');
   const img = imageRow?.querySelector('img');
