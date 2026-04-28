@@ -24,7 +24,7 @@
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Image",
+          "label": "Poster Image",
           "multi": false
         },
         {
@@ -33,6 +33,13 @@
           "name": "imageAlt",
           "label": "Alt",
           "value": ""
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "video",
+          "label": "Background Video (MP4)",
+          "multi": false
         },
         {
           "component": "richtext",

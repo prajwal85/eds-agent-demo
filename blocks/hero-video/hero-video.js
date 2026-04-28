@@ -1,14 +1,15 @@
-// eslint-disable-next-line no-unused-vars
 export default function decorate(block) {
-  // First row may contain a video link or image — convert to background video
-  const firstRow = block.querySelector(':scope > div:first-child');
-  if (!firstRow) return;
+  const rows = [...block.children];
+  // Row 0: poster image, Row 1: video link, Row 2: headline text
+  const imageRow = rows[0];
+  const videoRow = rows[1];
+  const textRow = rows[2];
 
-  const link = firstRow.querySelector('a');
-  const img = firstRow.querySelector('img');
+  // Check for video link in video row
+  const link = videoRow?.querySelector('a');
+  const img = imageRow?.querySelector('img');
 
   if (link && link.href && link.href.endsWith('.mp4')) {
-    // Create background video element
     const video = document.createElement('video');
     video.setAttribute('autoplay', '');
     video.setAttribute('muted', '');
@@ -21,16 +22,20 @@ export default function decorate(block) {
     source.setAttribute('type', 'video/mp4');
     video.append(source);
 
-    // Use the image as poster if available
     if (img) {
       video.setAttribute('poster', img.src);
     }
 
-    firstRow.textContent = '';
-    firstRow.appendChild(video);
+    // Replace both image and video rows with the video element
+    imageRow.textContent = '';
+    imageRow.appendChild(video);
+    videoRow.remove();
 
     video.addEventListener('canplay', () => {
       video.play();
     });
+  } else if (videoRow) {
+    // No video — merge video row into image row
+    videoRow.remove();
   }
 }
