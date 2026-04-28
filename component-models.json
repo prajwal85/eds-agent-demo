@@ -474,7 +474,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Poster Image",
         "multi": false
       },
       {
@@ -483,6 +483,13 @@
         "name": "imageAlt",
         "label": "Alt",
         "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video",
+        "label": "Background Video (MP4)",
+        "multi": false
       },
       {
         "component": "richtext",
@@ -769,18 +776,67 @@
     "id": "sticky-panels",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "2",
-        "label": "Columns"
+        "component": "reference",
+        "valueType": "string",
+        "name": "image1",
+        "label": "Panel 1 Image",
+        "multi": false
       },
       {
         "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "3",
-        "label": "Rows"
+        "valueType": "string",
+        "name": "image1Alt",
+        "label": "Panel 1 Image Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content1",
+        "value": "",
+        "label": "Panel 1 Content",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image2",
+        "label": "Panel 2 Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image2Alt",
+        "label": "Panel 2 Image Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content2",
+        "value": "",
+        "label": "Panel 2 Content",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image3",
+        "label": "Panel 3 Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image3Alt",
+        "label": "Panel 3 Image Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content3",
+        "value": "",
+        "label": "Panel 3 Content",
+        "valueType": "string"
       }
     ]
   },
