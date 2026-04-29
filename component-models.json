@@ -778,64 +778,22 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image1",
-        "label": "Panel 1 Image",
+        "name": "image",
+        "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "image1Alt",
-        "label": "Panel 1 Image Alt",
+        "name": "imageAlt",
+        "label": "Alt",
         "value": ""
       },
       {
         "component": "richtext",
-        "name": "content1",
+        "name": "content",
         "value": "",
-        "label": "Panel 1 Content",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image2",
-        "label": "Panel 2 Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "image2Alt",
-        "label": "Panel 2 Image Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "content2",
-        "value": "",
-        "label": "Panel 2 Content",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image3",
-        "label": "Panel 3 Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "image3Alt",
-        "label": "Panel 3 Image Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "content3",
-        "value": "",
-        "label": "Panel 3 Content",
+        "label": "Content",
         "valueType": "string"
       }
     ]
