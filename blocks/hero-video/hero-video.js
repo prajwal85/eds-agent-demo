@@ -1,13 +1,17 @@
+function isVideoUrl(url) {
+  if (!url) return false;
+  const path = url.split('?')[0];
+  return path.endsWith('.mp4') || path.includes('.mp4') || path.includes('/media_');
+}
+
 export default function decorate(block) {
   const rows = [...block.children];
-  // Row 0: poster image, Row 1: video link, Row 2: headline text
   const imageRow = rows[0];
   const videoRow = rows[1];
-  // Check for video link in video row
   const link = videoRow?.querySelector('a');
   const img = imageRow?.querySelector('img');
 
-  if (link && link.href && link.href.endsWith('.mp4')) {
+  if (link && isVideoUrl(link.href)) {
     const video = document.createElement('video');
     video.setAttribute('autoplay', '');
     video.setAttribute('muted', '');
@@ -24,7 +28,6 @@ export default function decorate(block) {
       video.setAttribute('poster', img.src);
     }
 
-    // Replace both image and video rows with the video element
     imageRow.textContent = '';
     imageRow.appendChild(video);
     videoRow.remove();
@@ -33,7 +36,6 @@ export default function decorate(block) {
       video.play();
     });
   } else if (videoRow) {
-    // No video — merge video row into image row
     videoRow.remove();
   }
 }

@@ -1,12 +1,17 @@
+function isVideoUrl(url) {
+  if (!url) return false;
+  const path = url.split('?')[0];
+  return path.endsWith('.mp4') || path.includes('.mp4') || path.includes('/media_');
+}
+
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-outro-${cols.length}-cols`);
 
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      // Convert .mp4 links to autoplay background video
-      const link = col.querySelector('a[href$=".mp4"]');
-      if (link) {
+      const link = col.querySelector('a');
+      if (link && isVideoUrl(link.href)) {
         const video = document.createElement('video');
         video.setAttribute('autoplay', '');
         video.setAttribute('muted', '');
