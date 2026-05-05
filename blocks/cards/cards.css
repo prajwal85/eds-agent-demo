@@ -3,13 +3,27 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
+}
+
+@media (width >= 600px) {
+  .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .cards > ul > li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
+  min-width: 0;
+  overflow: hidden;
 }
 
 .cards .cards-card-body {
