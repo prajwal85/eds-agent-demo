@@ -1,167 +1,386 @@
+---
+title: "UT Austin EDS — Developer Guide"
+subtitle: "Complete Architecture, All Blocks, Import Infrastructure, and Operations"
+date: "April 2026"
+---
+
 # UT Austin EDS — Developer Guide
 
 **Project:** University of Texas at Austin  
 **Platform:** AEM Edge Delivery Services (xwalk)  
 **Repository:** `github.com/prajwal85/eds-agent-demo`  
+**Total Blocks:** 35 (8 custom UT Austin + 10 retail legacy + 17 standard)  
 **Date:** April 2026
 
 ---
 
-## Architecture Overview
+## Architecture Diagram
 
-| Component | Technology |
-|-----------|-----------|
-| Project Type | xwalk (Universal Editor authoring) |
-| Source CMS | Drupal 11 (migrated from utexas.edu) |
-| Delivery | AEM Edge Delivery CDN |
-| Author | `author-p11300-e47725.adobeaemcloud.com` |
-| Preview | `main--eds-agent-demo--prajwal85.aem.page` |
-| Live | `main--eds-agent-demo--prajwal85.aem.live` |
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         CONTENT AUTHORING LAYER                                │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   ┌─────────────────────┐         ┌──────────────────────────┐              │
+│   │   Universal Editor   │────────▶│   AEM Author Instance     │              │
+│   │   (Browser-based)    │         │   author-p11300-e47725    │              │
+│   └─────────────────────┘         │   /content/eds-agent-demo │              │
+│                                    │   /content/dam/...        │              │
+│                                    └────────────┬─────────────┘              │
+│                                                 │                            │
+└─────────────────────────────────────────────────┼────────────────────────────┘
+                                                  │
+                                                  │ Franklin Delivery API
+                                                  │ (/bin/franklin.delivery/)
+                                                  ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         CODE & DELIVERY LAYER                                  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   ┌─────────────────────┐         ┌──────────────────────────┐              │
+│   │   GitHub Repository  │────────▶│   AEM Code Sync           │              │
+│   │   prajwal85/         │         │   (Auto-deploys on push)  │              │
+│   │   eds-agent-demo     │         └────────────┬─────────────┘              │
+│   │                      │                      │                            │
+│   │   ├── blocks/        │                      │                            │
+│   │   ├── styles/        │                      ▼                            │
+│   │   ├── scripts/       │         ┌──────────────────────────┐              │
+│   │   └── content/       │         │   EDS CDN Edge Network    │              │
+│   └─────────────────────┘         │                            │              │
+│                                    │   .aem.page (preview)     │              │
+│                                    │   .aem.live (production)  │              │
+│                                    └──────────────────────────┘              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         REQUEST FLOW                                           │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   Browser Request                                                            │
+│        │                                                                     │
+│        ▼                                                                     │
+│   ┌─────────┐     ┌──────────┐     ┌──────────┐     ┌──────────────┐       │
+│   │  CDN    │────▶│  EDS     │────▶│  Code    │────▶│  Rendered    │       │
+│   │  Edge   │     │  Delivery│     │  (JS/CSS)│     │  Page        │       │
+│   └─────────┘     └──────────┘     └──────────┘     └──────────────┘       │
+│                                                                              │
+│   1. CDN serves      2. Fetches       3. Loads block    4. Decorated        │
+│      cached page        .plain.html      JS/CSS per        HTML rendered    │
+│      or fetches         from Author      block class       to user          │
+│      fresh              instance                                             │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## Repository Structure
+## Block Loading Flow
 
 ```
-/
-├── blocks/                    # Custom block implementations
-│   ├── hero-video/           # Homepage video hero
-│   ├── cards-article/        # News story cards grid
-│   ├── columns/              # Vanilla columns (with sticky-panels + video detection)
-│   ├── columns-promo/        # Promotional callout
-│   ├── columns-impact/       # Impact stats sections
-│   ├── columns-outro/        # Outro with video
-│   ├── columns-resource/     # Resource link lists
-│   ├── sticky-panels/        # Sticky scroll panels
-│   ├── hero-banner/          # Interior page hero
-│   ├── header/               # Site header
-│   └── footer/               # Site footer
-├── styles/
-│   └── styles.css            # Global styles + brand tokens
-├── scripts/
-│   ├── scripts.js            # Core EDS scripts
-│   └── delayed.js            # Deferred scripts
-├── tools/importer/           # Import infrastructure
-│   ├── import-homepage.js    # Homepage import script
-│   ├── import-interior.js    # Interior pages import script
-│   ├── import-resource-hub.js # Resource hub import script
-│   ├── parsers/              # Block parsers (per-block content extraction)
-│   └── transformers/         # Page transformers (cleanup, sections)
-├── content/                  # Migrated content + media
-│   ├── index.plain.html     # Homepage
-│   ├── images/homepage/      # Homepage images
-│   └── media/               # Video files
-├── component-definition.json # Universal Editor block definitions
-├── component-models.json     # Block field models
-├── component-filters.json    # Block container filters
-└── Instructions.md           # Migration reference doc
+Page Load
+    │
+    ▼
+┌─────────────────────────────────────────────────┐
+│  1. Fetch {path}.plain.html from delivery       │
+│     (content from AEM Author JCR)               │
+└────────────────────┬────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────┐
+│  2. Parse HTML sections (<div> wrappers)        │
+│     Each top-level <div> = one section          │
+└────────────────────┬────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────┐
+│  3. Detect blocks (class="block-name")          │
+│     Load blocks/{name}/{name}.js + .css         │
+└────────────────────┬────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────┐
+│  4. Call decorate(block) for each block         │
+│     JS modifies DOM, adds classes, behavior     │
+└────────────────────┬────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────┐
+│  5. Page fully rendered and interactive         │
+└─────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Custom Blocks
+## Homepage Block Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ SECTION 1: Hero Video                                            │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │  hero-video block                                            │ │
+│ │  ┌─────────────────────────────────────────────────────┐    │ │
+│ │  │ Row 1: <video autoplay muted loop> (background)     │    │ │
+│ │  │ Row 2: <h1> THE FUTURE OF HEALTH...  (overlay)      │    │ │
+│ │  └─────────────────────────────────────────────────────┘    │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│ SECTION 2: News Cards                                            │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │  cards-article block                                         │ │
+│ │  ┌──────────────────┬───────────────────────────────────┐   │ │
+│ │  │ Card 2 [img|txt] │                                   │   │ │
+│ │  ├──────────────────┤  Card 1 (prominent)               │   │ │
+│ │  │ Card 3 [img|txt] │  [full image + headline overlay]  │   │ │
+│ │  └──────────────────┴───────────────────────────────────┘   │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│ SECTION 3: Promo (burnt-orange background)                       │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │  columns-promo block                                         │ │
+│ │  ┌─────────────────┬───────────────────────────────────┐    │ │
+│ │  │ Image           │ Heading + Text + CTA              │    │ │
+│ │  └─────────────────┴───────────────────────────────────┘    │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│ SECTION 4: Impact Intro (default content)                        │
+│ │  <h2> Boundless Ambition With Texas Roots                     │
+│ │  <p> At The University of Texas...                            │
+├─────────────────────────────────────────────────────────────────┤
+│ SECTION 5-7: Sticky Panels (×3 consecutive blocks)               │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │  sticky-panels block (or columns with auto-detection)        │ │
+│ │  ┌─────────────┬───────────────────────────────────────┐    │ │
+│ │  │ Image       │ Heading + Text + CTA                  │    │ │
+│ │  │ (sticky)    │ Stats: #1, #7 / 1,291 / 76           │    │ │
+│ │  │             │ (fade-in animation)                   │    │ │
+│ │  └─────────────┴───────────────────────────────────────┘    │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│ SECTION 8: Outro (For Texas, For the Future)                     │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │  columns-outro block                                         │ │
+│ │  ┌───────────────────────────────────┬─────────────────┐    │ │
+│ │  │ Heading + Text + CTA + Stats      │ <video autoplay> │    │ │
+│ │  │ $18B, 122K                         │ (looping)       │    │ │
+│ │  └───────────────────────────────────┴─────────────────┘    │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Interior Page Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ SECTION 1: Hero Banner                                           │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │  hero-banner block                                           │ │
+│ │  [Background image with heading overlay]                     │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│ SECTION 2+: Content                                              │
+│ │  Default content: H2, paragraphs, lists, links                │
+│ │  + columns-resource blocks for two-column layouts:            │
+│ │  ┌─────────────────────────────────────────────────────────┐ │
+│ │  │  columns-resource                                        │ │
+│ │  │  ┌──────────────────┬──────────────────┐                │ │
+│ │  │  │ H3 + Link List   │ H3 + Link List   │                │ │
+│ │  │  └──────────────────┴──────────────────┘                │ │
+│ │  └─────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│ METADATA                                                         │
+│ │  Title: "Page Title | University of Texas at Austin"           │
+│ │  Description: "SEO description..."                            │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Import Pipeline Architecture
+
+```
+Source (utexas.edu)          Import Scripts              Output (EDS content)
+─────────────────          ──────────────              ────────────────────
+
+┌───────────────┐    ┌─────────────────────────┐    ┌──────────────────┐
+│ Drupal 11     │    │  1. Scrape Webpage       │    │ content/         │
+│ HTML Pages    │───▶│     (Playwright)         │───▶│ index.plain.html │
+│               │    │                          │    │ about-texas.html │
+│ .block-bundle │    │  2. Cleanup Transformer  │    │ energy.html      │
+│ .utexas-layout│    │     (remove nav/footer)  │    │ ...49 files      │
+│ .ut-hero      │    │                          │    └──────────────────┘
+└───────────────┘    │  3. Section Transformer  │
+                     │     (insert <hr> breaks) │    ┌──────────────────┐
+                     │                          │    │ content/images/  │
+                     │  4. Block Parsers        │    │ content/media/   │
+                     │     (extract per-block)  │    │ (downloaded)     │
+                     │                          │    └──────────────────┘
+                     │  5. WebImporter Rules    │
+                     │     (metadata, paths)    │    ┌──────────────────┐
+                     └─────────────────────────┘    │ reports/         │
+                                                     │ *.report.json    │
+                                                     │ *.report.xlsx    │
+                                                     └──────────────────┘
+```
+
+---
+
+## Technology Stack
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        FRONTEND (Browser)                             │
+│  ┌───────────┐  ┌───────────┐  ┌───────────┐  ┌───────────────┐   │
+│  │ scripts/  │  │ styles/   │  │ blocks/   │  │ lib-franklin  │   │
+│  │ scripts.js│  │ styles.css│  │ *.js *.css│  │ (EDS runtime) │   │
+│  └───────────┘  └───────────┘  └───────────┘  └───────────────┘   │
+├─────────────────────────────────────────────────────────────────────┤
+│                        DELIVERY (CDN Edge)                            │
+│  ┌───────────────────────────────────────────────────────────────┐  │
+│  │ AEM Edge Delivery Services                                     │  │
+│  │ - Serves .plain.html from Author                               │  │
+│  │ - Serves JS/CSS from GitHub (code sync)                        │  │
+│  │ - Image optimization (WebP, responsive)                        │  │
+│  │ - Edge caching (instant global delivery)                       │  │
+│  └───────────────────────────────────────────────────────────────┘  │
+├─────────────────────────────────────────────────────────────────────┤
+│                        BACKEND (AEM Cloud)                            │
+│  ┌───────────────────┐  ┌────────────────────────────────────────┐  │
+│  │ AEM Author        │  │ GitHub Repository                       │  │
+│  │ - JCR content     │  │ - blocks/ (35 blocks)                   │  │
+│  │ - DAM assets      │  │ - styles/ (brand tokens)                │  │
+│  │ - Universal Editor│  │ - tools/importer/ (migration infra)     │  │
+│  └───────────────────┘  │ - component-*.json (xwalk models)       │  │
+│                          └────────────────────────────────────────┘  │
+├─────────────────────────────────────────────────────────────────────┤
+│                        CI/CD                                          │
+│  ┌───────────────────────────────────────────────────────────────┐  │
+│  │ GitHub Actions: lint (ESLint + Stylelint + xwalk rules)        │  │
+│  │ AEM Code Sync: auto-deploy on push to main                    │  │
+│  │ AEM Sidekick: preview → publish workflow                       │  │
+│  └───────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Custom Blocks (8) — Detailed Reference
 
 ### hero-video
 
-**Files:** `blocks/hero-video/hero-video.js`, `.css`, `_hero-video.json`
+**Files:** `blocks/hero-video/hero-video.js`, `.css`, `_hero-video.json`  
+**Used on:** Homepage only  
+**Selector:** `.block-coresite-homepagehero`
 
-**Behavior:**
-- Detects `.mp4` link in Row 2 (video field)
-- Creates `<video autoplay muted loop playsinline>` element
-- Uses Row 1 image as poster fallback
-- Removes video row after creating element, leaving 2 rows (background + text)
+**Model (3 fields, 2 cells after imageAlt collapse):**
 
-**CSS Pattern:**
-- `div:first-child` — absolute positioned background (video/image)
-- `div:last-child` — relative positioned text overlay with gradient
+| Field | Type | Maps to |
+|-------|------|---------|
+| image | reference | Row 1 — poster/fallback image |
+| imageAlt | text (collapsed) | — |
+| video | reference | Row 2 — .mp4 link |
+| text | richtext | Row 3 — headline (H1) |
 
-**Model (3 fields = 2 cells):**
-```json
-image (reference) + imageAlt (collapsed)
-video (reference)
-text (richtext)
-```
+**JS Behavior:**
+
+1. `isVideoUrl()` — checks `.mp4` in path OR `/media_` hash URLs
+2. Creates `<video autoplay muted loop playsinline>` with poster
+3. Removes video row → 2 rows remain (background + text)
+
+**CSS:** Absolute background + gradient text overlay
 
 ---
 
-### columns (enhanced)
+### hero-banner
 
-**File:** `blocks/columns/columns.js`
+**Files:** `blocks/hero-banner/hero-banner.js`, `.css`, `_hero-banner.json`  
+**Used on:** 30+ interior pages  
+**Selector:** `.block-bundle-utexas-hero`
 
-The vanilla columns block has been enhanced with auto-detection:
-
-1. **Sticky Panels Detection:** If column 1 has image AND column 2 has `<strong>` stats + `<a>` CTA → applies sticky-panels CSS classes + IntersectionObserver for fade-in
-2. **Video Detection:** If any column has a link containing `.mp4` or `/media_` → creates autoplay video element
-3. **Fallback:** Standard columns behavior (image-col detection)
-
-**Why:** AEM Author delivers impact sections as `columns` blocks. The JS auto-detects content patterns and applies appropriate decoration.
+Standard hero with background image + text overlay. No video.
 
 ---
 
 ### cards-article
 
-**File:** `blocks/cards-article/cards-article.css`
+**Files:** `blocks/cards-article/cards-article.js`, `.css`, `_cards-article.json`  
+**Used on:** Homepage  
 
-**CSS Grid Layout (desktop):**
-```
-┌─────────────────────┬────────────────────────┐
-│ Card 2 (secondary)  │                        │
-│ [img] [headline]    │  Card 1 (prominent)    │
-├─────────────────────┤  [full image]          │
-│ Card 3 (secondary)  │  [headline overlay]    │
-│ [img] [headline]    │                        │
-└─────────────────────┴────────────────────────┘
-```
-
-- `li:first-child` — right column, spans both rows, full-height image with gradient headline overlay
-- `li:nth-child(2/3)` — left column, horizontal layout (image left, headline right)
+**Desktop grid:** `li:first-child` → right col spans 2 rows; `li:nth-child(2,3)` → left col stacked.  
+Background: `var(--burnt-orange)`. Prominent card has gradient headline overlay.
 
 ---
 
 ### sticky-panels
 
-**Files:** `blocks/sticky-panels/sticky-panels.js`, `.css`
+**Files:** `blocks/sticky-panels/sticky-panels.js`, `.css`, `_sticky-panels.json`  
+**Used on:** Homepage (3 instances)  
 
-**Desktop Behavior:**
-- Image column: `position: sticky; top: 64px; height: calc(100vh - 64px)`
-- Content column: normal flow, scrolls past sticky image
-- Stats: `opacity: 0 → 1` transition via IntersectionObserver
-
-**Mobile:** Stacked layout (image on top, content below)
-
-**Model:** 2 cells per block (image + content). Use 3 consecutive blocks for 3 panels.
+Desktop: `position: sticky` on image (40% width, viewport height).  
+IntersectionObserver fade-in for stats. Model: 2 cells (image + content) per block.
 
 ---
 
-### columns-outro
+### columns (enhanced)
 
-**File:** `blocks/columns-outro/columns-outro.js`
+**File:** `blocks/columns/columns.js`, `.css`  
+**Used on:** AEM Author pages (auto-detects patterns)
 
-Detects `.mp4` links and creates autoplay video. Adds `.columns-outro-video-col` class for styling.
+Three behaviors:
+1. **Sticky panels** — image + stats + CTA detected → applies sticky decoration
+2. **Video** — `.mp4` link detected → creates autoplay video  
+3. **Standard** — picture-only columns get `.columns-img-col`
 
 ---
 
-## Design Tokens (styles/styles.css)
+### columns-promo / columns-impact / columns-outro / columns-resource
+
+Specialized column variants for homepage promo, impact stats, outro video, and resource link lists respectively. Each has its own CSS but shares the columns base structure.
+
+---
+
+## Standard Blocks (17)
+
+| Block | Description |
+|-------|-------------|
+| hero | Standard hero (text + image) |
+| cards | Standard card grid |
+| accordion | Expandable Q&A |
+| tabs | Tabbed content |
+| carousel | Rotating slideshow |
+| quote | Testimonial/pullquote |
+| embed | External embed |
+| video | Video player (YouTube, Vimeo, MP4) |
+| table | Data table |
+| modal | Modal overlay |
+| form | Form inputs |
+| fragment | Reusable content |
+| search | Search |
+| header | Site header |
+| footer | Site footer |
+| carousel-hero | Hero carousel (WKND legacy) |
+| columns-featured | Featured columns (WKND legacy) |
+
+---
+
+## Design Tokens
 
 ```css
 :root {
-  /* UT Austin brand colors */
-  --link-color: #bf5700;          /* Burnt orange */
-  --link-hover-color: #9d4700;    /* Darker orange */
-  --dark-color: #333f48;          /* Charcoal */
-  --text-color: #212529;          /* Body text */
-  --heading-color: #333f48;       /* Headings */
-  --burnt-orange: #bf5700;        /* Brand alias */
-  --charcoal: #333f48;            /* Brand alias */
+  --link-color: #bf5700;           /* Burnt orange */
+  --link-hover-color: #9d4700;     /* Darker orange */
+  --dark-color: #333f48;           /* Charcoal */
+  --text-color: #212529;           /* Body text */
+  --heading-color: #333f48;        /* Headings */
+  --burnt-orange: #bf5700;
+  --charcoal: #333f48;
   --background-color: white;
   --light-color: #f8f8f8;
   --overlay-background-color: #ebe7e1;
-
-  /* Fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
-
-  /* Button style: 4px radius, orange border */
 }
 ```
 
@@ -169,111 +388,59 @@ Detects `.mp4` links and creates autoplay video. Adds `.columns-outro-video-col`
 
 ## Import Infrastructure
 
-### Overview
+### Scripts & Parsers
 
-Content was migrated from Drupal 11 (utexas.edu) using 3 import scripts:
+| Import Script | Pages | Parsers Used |
+|---------------|-------|-------------|
+| `import-homepage.js` | 1 | hero-video, cards-article, columns-promo, columns-impact, columns-outro |
+| `import-resource-hub.js` | 3 | columns-resource |
+| `import-interior.js` | 45 | hero-banner, columns-resource |
 
-| Script | Template | Pages |
-|--------|----------|-------|
-| `import-homepage.js` | Homepage | 1 |
-| `import-resource-hub.js` | Resource hub | 3 |
-| `import-interior.js` | All other pages | 45 |
+### Transformers
 
-### Parsers (`tools/importer/parsers/`)
+| Transformer | Hook | Purpose |
+|-------------|------|---------|
+| `utexas-cleanup.js` | before + after | Remove nav, convert blockquotes, section-metadata |
+| `utexas-sections.js` | before | Insert `<hr>` section breaks |
 
-| Parser | Block | Source Selector |
-|--------|-------|-----------------|
-| `hero-video.js` | hero-video | `.block-coresite-homepagehero` |
-| `hero-banner.js` | hero-banner | `.block-bundle-utexas-hero` |
-| `cards-article.js` | cards-article | `.block-coresite-stories` |
-| `columns-impact.js` | columns-impact | `.block-coresite-impact-1/2/3` |
-| `columns-promo.js` | columns-promo | `#block-coretheme-homepagemidpagepromo` |
-| `columns-outro.js` | columns-outro | `.block-homepage-outro` |
-| `columns-resource.js` | columns-resource | `.utexas-layout--twocol-wrapper` |
-
-### Transformers (`tools/importer/transformers/`)
-
-| Transformer | Purpose |
-|-------------|---------|
-| `utexas-cleanup.js` | Remove header/footer/nav, convert blockquotes to quote blocks, insert section-metadata |
-| `utexas-sections.js` | Insert section breaks before parsing (beforeTransform) |
-
-### Re-importing a Page
+### Re-import Commands
 
 ```bash
-# Re-bundle after parser/transformer changes
 SCRIPTS="/home/node/.excat-marketplace/excat/skills/excat-content-import/scripts"
+
+# Bundle
 "$SCRIPTS/aem-import-bundle.sh" --importjs tools/importer/import-interior.js
 
-# Re-import single page
-echo "https://www.utexas.edu/about-texas" > /tmp/single-url.txt
+# Import single URL
+echo "https://www.utexas.edu/about-texas" > /tmp/url.txt
 node "$SCRIPTS/run-bulk-import.js" \
-  --import-script tools/importer/import-interior.bundle.js \
-  --urls /tmp/single-url.txt
+  --import-script tools/importer/import-interior.bundle.js --urls /tmp/url.txt
 ```
 
 ---
 
-## Known Issues & Workarounds
+## Known Issues & Fixes
 
-### 1. Stats Not Extracted from Impact Sections
-**Cause:** JSDOM displaces `.stats` elements outside parent due to `<picture>` with empty `<source>` tags breaking DOM nesting.
-**Fix:** Parser uses `KNOWN_STATS` fallback keyed by heading text.
-
-### 2. Video on AEM Cloud
-**Cause:** Relative `./media/` paths don't resolve on AEM delivery.
-**Fix:** Videos use `/content/media/` absolute paths. Both `hero-video.js` and `columns.js` detect `.mp4` AND `/media_` hash URLs.
-
-### 3. Sticky Panels on AEM Author
-**Cause:** AEM Author delivers as `columns` blocks, not `sticky-panels`.
-**Fix:** `columns.js` auto-detects the pattern (image + stats + CTA) and applies sticky-panels decoration.
-
-### 4. xwalk/max-cells Lint Rule
-**Cause:** Maximum 4 cells per block model.
-**Fix:** Sticky-panels uses 2 cells (image + content) per instance. 3 consecutive blocks for 3 panels.
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| Stats missing from impact | JSDOM breaks `<picture>` nesting | `KNOWN_STATS` fallback in parser |
+| Video not playing on AEM | Relative paths, URL format | `isVideoUrl()` checks `.mp4` + `/media_` |
+| Sticky panels blank on Author | Delivered as `columns` class | `columns.js` auto-detects pattern |
+| Max-cells lint error | >4 cells per model | 2 cells per block, 3 instances |
+| Circular images | Boilerplate CSS `border-radius: 50%` | Removed, replaced with `width: 100%` |
+| Blockquotes raw HTML | Drupal blockquotes unhandled | Transformer converts to quote blocks |
 
 ---
 
-## Development Commands
+## Development & Deployment
 
 ```bash
-# Start local dev server
-aem up
-
-# Run linting
-npm run lint
-
-# Preview at
-# http://localhost:3000/content/index
-
-# Run only CSS lint
-npm run lint:css
-
-# Run only JS lint
-npm run lint:js
+aem up                    # Local dev server
+npm run lint              # Full lint (JS + CSS + xwalk)
+npm run lint:css          # CSS only
+npm run lint:js           # JS only
 ```
 
----
+**Deploy:** Push to `main` → GitHub Actions lint → AEM Code Sync → Preview → Publish via Sidekick
 
-## Deployment
-
-Code deploys automatically via GitHub push → AEM Code Sync:
-
-1. Push to `main` branch
-2. GitHub Actions runs lint check
-3. AEM Code Sync picks up changes
-4. Preview updates at `.aem.page`
-5. Publish via Sidekick to go live at `.aem.live`
-
----
-
-## Key Files Reference
-
-| File | Purpose |
-|------|---------|
-| `fstab.yaml` | AEM Author mountpoint configuration |
-| `.migration/project.json` | Migration project settings (type: xwalk) |
-| `component-definition.json` | Block definitions for Universal Editor |
-| `component-models.json` | Block field models |
-| `component-filters.json` | Block container component filters |
-| `Instructions.md` | Complete migration reference (DOM patterns, debugging) |
+**Lint rules:** `xwalk/max-cells` (≤4), `no-unused-vars`, `color-function-notation` (modern rgb), `alpha-value-notation` (%)
