@@ -3,7 +3,20 @@
 > **Migration completed:** 2026-04-22 in ~2h 33m
 > **Source:** https://www.utexas.edu (Drupal 11)
 > **Target:** AEM Edge Delivery Services (xwalk project)
-> **Pages migrated:** 49/49 (zero failures)
+> **Pages migrated:** 54+ (ongoing)
+
+---
+
+## Related Files
+
+| File | Purpose |
+|------|---------|
+| `AGENTS.md` | Primary agent context, file map, decision log |
+| `CLAUDE.md` | Claude Code behavioral rules and commands |
+| `CONTEXT.md` | Brand colors, typography, visual design tokens |
+| `MIGRATION-PROMPT.md` | Refined migration prompt with post-import checklist |
+| `MIGRATION-CONTEXT.md` | Lessons learned, page type gaps, procedures |
+| `Instructions.md` | This file — full technical reference |
 
 ---
 
