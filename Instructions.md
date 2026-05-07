@@ -289,6 +289,52 @@ FOOTER (removed by transformer):
 
 ---
 
+## Critical Migration Rules & Fixes
+
+Rules identified during homepage migration that MUST be followed for all future imports:
+
+### Rule 1: Duplicate Hero Block Prevention
+**Problem:** Import script matched both `.block-bundle-utexas-hero-video` AND `.block-coresite-homepagehero` as sibling elements, creating two separate (often empty) hero blocks.
+**Rule:** When the source page has sibling hero elements, target ONLY the container that holds both video background and headline text (`.block-coresite-homepagehero`). Never match sibling elements independently.
+
+### Rule 2: Blockquote-to-Quote Conversion
+**Problem:** Raw `<blockquote>` tags from Drupal appeared unprocessed in output.
+**Rule:** The cleanup transformer must convert `<blockquote>` to EDS quote blocks. Extract quote text and attribution, create `<div class="quote">` with proper row structure. Affected 4 pages; all re-imported successfully.
+
+### Rule 3: Image URL Variant Mapping
+**Problem:** Images referenced `1170x1536` URLs not in scraper's local mapping. WebImporter's `adjustImageUrls` removed them entirely.
+**Rule:** Parsers must rewrite image URLs from `1170x1536` to `585x768` variant (which matches the scraper's downloaded mapping). Without this fix, images disappear.
+
+### Rule 4: Stats Fallback for JSDOM Parsing Quirks
+**Problem:** JSDOM's HTML parsing of `<picture>` elements with empty `<source>` tags displaces `.stats` divs outside their parent containers, making DOM queries fail. Stats elements completely absent from output.
+**Rule:** Add a `KNOWN_STATS` fallback object in parsers (e.g., `columns-impact.js`). When dynamic extraction fails, match stats by heading text and inject directly. Guarantees stats appear even if DOM nesting is broken.
+
+### Rule 5: Circular Image Fix (EDS Boilerplate CSS)
+**Problem:** All images displayed as 200x200 circles due to default EDS CSS: `main p > img:only-child { border-radius: 50%; width: 200px; height: 200px; }`
+**Rule:** Change `border-radius: 50%` to `border-radius: 0px` in `styles/styles.css`. Images then display at full width with natural aspect ratio.
+
+### Rule 6: Brand Color Override (Blue → Burnt Orange)
+**Problem:** All buttons, links, and headings rendered in default EDS blue (`#3b63fb`) instead of UT Austin burnt orange (`#bf5700`).
+**Rule:** Update CSS custom properties in `styles/styles.css`:
+```css
+--link-color: #bf5700        /* burnt orange */
+--button-bg: #bf5700
+--button-border: #bf5700
+--heading-color: #333f48     /* charcoal */
+--body-color: #212529        /* dark gray */
+```
+Button `border-radius: 4px` (square corners, not `2.4em` pill shape).
+
+### Rule 7: Section Break Ordering (beforeTransform)
+**Problem:** Sections transformer ran in `afterTransform` phase after parsers had already replaced target DOM elements, so section breaks never inserted.
+**Rule:** Section break insertion MUST happen in `beforeTransform` phase, BEFORE any parser modifications. Move section break logic to execute first.
+
+### Rule 8: Video Block Embedding
+**Problem:** Video in "For Texas" section rendered as text link instead of embedded video.
+**Rule:** Video URLs (`.mp4`) must be wrapped in a proper Video block (`<div class="video">`) — not left as plain `<a>` links. The Video block auto-decorates with `autoplay` controls. Note: Cross-origin videos may not load in local preview due to CORS but will work in production.
+
+---
+
 ## Known Issues & Quirks
 
 ### 1. Quick Links Grid Items Are NOT Links
