@@ -1003,3 +1003,282 @@ MANUAL VALIDATION (download images, fix gaps)
 - Mark frozen/locked items clearly
 - Add a "Last Updated" date at the top of each file
 ````
+
+---
+
+## Prompt 4: Post-Migration Validation & Fix
+
+Use this prompt AFTER migration is done (or partially done) to audit specific pages. It re-validates content, images, blocks, and structure against the source — then fixes any issues found.
+
+### Variables
+
+```yaml
+# ─── REQUIRED ─────────────────────────────────────────────────────────
+SOURCE_SITE: ""              # e.g., "https://www.utexas.edu"
+CONTENT_PATH: "content"      # Where .plain.html files live
+IMAGES_PATH: "content/images" # Where images are stored
+MEDIA_PATH: "content/media"   # Where videos are stored
+URLS_TO_VALIDATE: []         # List of source URLs to audit (one or more)
+# Example:
+#   - https://www.utexas.edu/about-texas
+#   - https://www.utexas.edu/energy
+#   - https://www.utexas.edu/research
+```
+
+### The Prompt
+
+````
+## Post-Migration Validation & Fix
+
+The following pages have been migrated but may have issues. Re-validate each one against its source URL and fix all problems found.
+
+**Source site:** {{SOURCE_SITE}}
+**Content path:** {{CONTENT_PATH}}/
+**Images path:** {{IMAGES_PATH}}/
+**Media path:** {{MEDIA_PATH}}/
+
+### Pages to Validate
+
+{{URLS_TO_VALIDATE}}
+
+---
+
+## For EACH URL above, perform this audit:
+
+### STEP 1: Scrape the Source Page (Fresh)
+
+Do NOT trust what was scraped before. Fetch the live source page RIGHT NOW and build a complete inventory:
+
+**1.1 Image Inventory**
+- List EVERY image on the source page (URL, alt text, location on page)
+- Note image purpose: hero, card thumbnail, inline content, icon, background
+- Count total images on source
+
+**1.2 Video/Media Inventory**
+- List every video (.mp4, .webm) or embed (YouTube, Vimeo)
+- Note if video is hero background vs inline player
+
+**1.3 Content Section Inventory**
+- Map every distinct content section from top to bottom:
+  - Hero (video/image/text-only/none)
+  - Intro/overview text
+  - Card grids (news, features, people)
+  - Multi-column layouts (resources, links, comparisons)
+  - Statistics/counters
+  - Quotes/testimonials
+  - Accordions/FAQs
+  - Call-to-action sections
+  - Related links / footer content
+- Note the ORDER of sections (this matters for structure)
+
+**1.4 Metadata**
+- Extract: page title, meta description, OG image
+
+---
+
+### STEP 2: Audit the Migrated Content File
+
+Read `{{CONTENT_PATH}}/{page-name}.plain.html` and check against the source inventory:
+
+**2.1 Image Audit**
+
+| Check | Pass/Fail | Details |
+|-------|-----------|---------|
+| All source images present in content? | | List any missing images |
+| All image paths are LOCAL (./images/...)? | | List any external URLs |
+| Image files actually EXIST on disk? | | List any missing files |
+| Image file sizes > 0 bytes? | | List any empty/corrupt files |
+| Alt text present and meaningful? | | List any missing alt text |
+
+**2.2 Video/Media Audit**
+
+| Check | Pass/Fail | Details |
+|-------|-----------|---------|
+| All source videos present? | | List missing videos |
+| Video paths are LOCAL (/{{MEDIA_PATH}}/...)? | | List external URLs |
+| Video files exist on disk? | | List missing files |
+| Video file sizes > 0 bytes? | | List corrupt files |
+
+**2.3 Content Completeness Audit**
+
+| Check | Pass/Fail | Details |
+|-------|-----------|---------|
+| All source sections represented? | | List missing sections |
+| Section ORDER matches source? | | Note reordering issues |
+| Hero block type correct? (video vs banner vs none) | | Wrong type? |
+| Card sections present with all cards? | | Missing cards? |
+| Column layouts complete? | | Missing columns? |
+| Statistics/numbers accurate? | | Wrong numbers? |
+| Quotes present with attribution? | | Missing quotes? |
+| All links preserved and working? | | Broken/missing links? |
+
+**2.4 Structure Audit**
+
+| Check | Pass/Fail | Details |
+|-------|-----------|---------|
+| Each section is a top-level `<div>`? | | Flat structure issues? |
+| Block classes are correct? | | Typos in class names? |
+| Field hints present (<!-- field:... -->)? | | Missing hints? |
+| Metadata block is LAST section? | | Missing or misplaced? |
+| No artifacts? (skip links, breadcrumbs, pause text) | | List artifacts found |
+| No empty/orphaned elements? | | List empty divs/sections |
+
+---
+
+### STEP 3: Fix All Issues Found
+
+For each FAIL in the audit above, fix it:
+
+**Missing images:**
+1. Download from source: `curl -sL "{source-url}" -o {{IMAGES_PATH}}/{page-name}/{descriptive-name}.jpg`
+2. Verify file size > 0
+3. Update content file with local path: `./images/{page-name}/{filename}`
+
+**External URLs still in content:**
+1. Download the image/video locally
+2. Replace the URL with local relative path
+
+**Missing content sections:**
+1. Refer to source page section inventory (Step 1.3)
+2. Add the missing section with correct block structure
+3. Download any images needed for that section
+
+**Wrong hero type:**
+1. If source has video → use `hero-video` block (3 rows: image, video, text)
+2. If source has static image → use `hero-banner` block (2 rows: image, text)
+3. Download poster image and/or video file
+
+**Missing metadata:**
+1. Add metadata block as the LAST section:
+```html
+<div><div class="metadata">
+  <div><div>Title</div><div>{page title from source}</div></div>
+  <div><div>Description</div><div>{meta description from source}</div></div>
+</div></div>
+```
+
+**Artifacts to remove:**
+- "Skip to main content" links
+- "Breadcrumb" headings
+- "Pause button" / video control text
+- Cookie consent text
+- CMS admin toolbar remnants
+- Empty paragraphs or divs with no content
+
+---
+
+### STEP 4: Verify the Fix in Preview
+
+After all fixes are applied:
+
+```bash
+aem up
+# Navigate to: http://localhost:3000/{{CONTENT_PATH}}/{page-name}
+```
+
+Run the verification script in browser console:
+```javascript
+(() => {
+  const imgs = document.querySelectorAll('main img');
+  const videos = document.querySelectorAll('main video, main a[href$=".mp4"]');
+  const sections = document.querySelectorAll('main > div');
+  const blocks = document.querySelectorAll('main [class]');
+  
+  const results = {
+    images: {
+      total: imgs.length,
+      local: [...imgs].filter(i => i.src.includes('/images/') || i.src.includes('/media/')).length,
+      external: [...imgs].filter(i => /^https?:\/\/(?!localhost)/.test(i.src)).length,
+      broken: [...imgs].filter(i => i.naturalWidth === 0).length,
+    },
+    videos: {
+      total: videos.length,
+    },
+    structure: {
+      sections: sections.length,
+      blocks: blocks.length,
+      hasMetadata: !!document.querySelector('.metadata'),
+    }
+  };
+
+  console.log('=== MIGRATION VALIDATION ===');
+  console.table(results.images);
+  console.log('Videos:', results.videos.total);
+  console.log('Sections:', results.structure.sections, '| Blocks:', results.structure.blocks);
+  console.log('Has metadata:', results.structure.hasMetadata);
+  
+  // PASS CONDITIONS:
+  const passed = results.images.external === 0 
+    && results.images.broken === 0 
+    && results.structure.hasMetadata;
+  console.log(passed ? '✅ PASS' : '❌ FAIL — fix issues above');
+})();
+```
+
+**Pass criteria:**
+- `external: 0` — no images pointing to source site
+- `broken: 0` — all images load successfully
+- `hasMetadata: true` — metadata block exists
+- Visual inspection: page looks complete compared to source
+
+---
+
+### STEP 5: Generate Validation Report
+
+After validating all pages, output a summary:
+
+```markdown
+## Validation Report — {{date}}
+
+| Page | Source URL | Images (total/local/external/broken) | Videos | Sections | Metadata | Status |
+|------|-----------|--------------------------------------|--------|----------|----------|--------|
+| {name} | {url} | 12/12/0/0 | 1 | 6 | ✅ | ✅ PASS |
+| {name} | {url} | 8/6/2/0 | 0 | 4 | ✅ | ❌ FAIL — 2 external images |
+
+### Issues Fixed
+- {page}: Downloaded 3 missing images, added cards-article section
+- {page}: Changed hero-banner → hero-video, downloaded .mp4
+
+### Remaining Issues (if any)
+- {page}: Source video returns 403 — needs manual download or alternate source
+```
+
+---
+
+### STEP 6: Commit Fixes
+
+```bash
+export HOME=/home/node
+git add -f {{CONTENT_PATH}}/
+git commit -m "Validate and fix migration: {page-names} — {summary of fixes}"
+git push origin {{GITHUB_BRANCH}}
+```
+
+---
+
+## Validation Severity Levels
+
+| Severity | Issue | Action |
+|----------|-------|--------|
+| 🔴 Critical | External image URLs in content | MUST fix — breaks in production |
+| 🔴 Critical | Missing hero section | MUST fix — page looks broken |
+| 🔴 Critical | No metadata block | MUST fix — no SEO, no title |
+| 🟠 High | Missing content section (cards, columns) | Fix — page is incomplete |
+| 🟠 High | Wrong hero type (video vs banner) | Fix — hero doesn't function correctly |
+| 🟠 High | Videos not downloaded | Fix — video won't play |
+| 🟡 Medium | Missing alt text on images | Fix — accessibility issue |
+| 🟡 Medium | Artifacts in content (skip links, etc.) | Fix — looks unprofessional |
+| 🟢 Low | Minor text differences from source | Note — may be intentional edits |
+| 🟢 Low | Slight section order variation | Note — verify with stakeholder |
+
+---
+
+## When to Use This Prompt
+
+- After running the automated importer (ALWAYS — importer output is never final)
+- After a batch migration (validate all pages in the batch)
+- When a page looks wrong in preview
+- When someone reports broken images or missing content
+- As a periodic audit on already-migrated pages
+- Before final sign-off / handover to content team
+````
