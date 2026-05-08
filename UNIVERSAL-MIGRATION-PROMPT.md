@@ -422,3 +422,228 @@ URLS_TO_MIGRATE:
 6. **Don't fight the importer** — If the importer misses something, fix it manually. The importer is a timesaver for 70% of the work; you do the last 30%.
 
 7. **Images are the #1 failure point** — If you remember nothing else: download every image locally. External URLs = broken production page.
+
+---
+
+## Prompt 1: Project Setup
+
+Use this prompt at the very start when setting up a brand new EDS project from scratch.
+
+````
+## AEM Edge Delivery Services — Project Setup
+
+Set up a new AEM Edge Delivery Services project with the following configuration:
+
+### Project Details
+- **Project name:** {{AEM_SITE_NAME}}
+- **Project type:** {{PROJECT_TYPE}}  (xwalk | doc | da)
+- **GitHub repository:** {{GITHUB_REPO}}
+- **Branch:** {{GITHUB_BRANCH}}
+
+### AEM Cloud Configuration
+- **Author host:** {{AEM_AUTHOR_HOST}}
+- **Site path:** {{AEM_SITE_PATH}}
+- **DAM path:** {{AEM_DAM_PATH}}
+- **Block library:** {{BLOCK_LIBRARY_URL}}
+
+### Tasks
+
+1. **Initialize repository structure**
+   - Clone or scaffold from AEM boilerplate (aem-block-collection or aem-boilerplate)
+   - Set up `blocks/`, `styles/`, `tools/importer/`, `content/` directories
+   - Configure `.migration/project.json` with:
+     ```json
+     {
+       "type": "{{PROJECT_TYPE}}",
+       "libraryUrl": "{{BLOCK_LIBRARY_URL}}",
+       "contentHostUrl": "{{AEM_AUTHOR_HOST}}",
+       "aemSitePath": "{{AEM_SITE_PATH}}",
+       "aemAssetsFolderPath": "{{AEM_DAM_PATH}}",
+       "aemSiteName": "{{AEM_SITE_NAME}}",
+       "aemSiteTitle": "{{AEM_SITE_TITLE}}",
+       "previewOrg": "{{PREVIEW_ORG}}",
+       "previewSite": "{{PREVIEW_SITE}}"
+     }
+     ```
+
+2. **Configure git**
+   ```bash
+   export HOME=/home/node
+   git config user.email "noreply@anthropic.com"
+   git config user.name "Claude"
+   # Add content to .git/info/exclude (EDS convention)
+   echo "/content" >> .git/info/exclude
+   ```
+
+3. **Set up design system**
+   - Extract brand colors, typography, and spacing from {{SOURCE_SITE}}
+   - Create `styles/styles.css` with CSS custom properties (design tokens)
+   - Include font imports, reset styles, button styles, layout constraints
+   - Set breakpoints (typically 900px mobile/desktop)
+
+4. **Configure linting**
+   - ESLint for JavaScript (blocks use vanilla JS)
+   - Stylelint for CSS
+   - Verify with `npm run lint`
+
+5. **Set up import infrastructure**
+   - Create `tools/importer/page-templates.json` (empty templates array initially)
+   - Create transformer stubs: `tools/importer/transformers/`
+   - Create parser directory: `tools/importer/parsers/`
+
+6. **Verify local preview**
+   ```bash
+   aem up
+   # Should serve at http://localhost:3000
+   ```
+
+7. **Create project documentation files**
+   - `CLAUDE.md` — Claude Code rules, commands, architecture summary
+   - `AGENTS.md` — File map, decision log, migration workflow
+   - `CONTEXT.md` — Brand colors, typography, visual rules
+   - `Instructions.md` — Full technical reference (templates, parsers, DOM patterns)
+
+8. **Initial commit & push**
+   ```bash
+   git add -A
+   git commit -m "Initial project setup: {{AEM_SITE_NAME}} EDS migration"
+   git push origin {{GITHUB_BRANCH}}
+   ```
+
+### Success Criteria
+- [ ] `aem up` runs without errors
+- [ ] `npm run lint` passes
+- [ ] `.migration/project.json` configured correctly
+- [ ] Design tokens extracted and applied in styles.css
+- [ ] Documentation files created (CLAUDE.md, AGENTS.md, CONTEXT.md)
+- [ ] Repository pushed to {{GITHUB_REPO}}
+````
+
+---
+
+## Prompt 2: Warm-Up Prompt (Session Bootstrap)
+
+Use this prompt at the start of every new chat session so Claude Code loads full project context without you explaining anything.
+
+````
+Read the following project files to understand the full context of this migration project, then confirm you're ready:
+
+1. `CLAUDE.md` — Project rules, commands, architecture, DO/DON'T lists
+2. `AGENTS.md` — File map, repository structure, migration workflow, decision log
+3. `Instructions.md` — Full technical reference (templates, parsers, DOM patterns, block variants)
+4. `CONTEXT.md` — Brand design tokens (colors, typography, buttons, spacing, responsive rules)
+5. `MIGRATION-PROMPT.md` — Migration prompt template with post-import checklist
+6. `MIGRATION-CONTEXT.md` — Lessons learned, known gaps, page type classification
+7. `.migration/project.json` — Project config (type, AEM paths, library URL)
+8. `tools/importer/page-templates.json` — All template definitions and block mappings
+
+After reading, respond with:
+- Project name and type
+- Source site and CMS
+- Number of templates and pages migrated so far
+- Key blocks available
+- Any active warnings or rules I should know about
+
+Then await my instructions.
+````
+
+### Shorter Version (if you want minimal):
+
+````
+Bootstrap this session: Read CLAUDE.md, AGENTS.md, Instructions.md, CONTEXT.md, MIGRATION-PROMPT.md, MIGRATION-CONTEXT.md, .migration/project.json, and tools/importer/page-templates.json. Summarize the project state and confirm you're ready.
+````
+
+---
+
+## Prompt 3: Documentation Generation
+
+Use this prompt to generate or update project documentation. Refers to existing MD files as the source of truth.
+
+````
+## Generate/Update Project Documentation
+
+Review the current state of this project and generate comprehensive documentation.
+
+### Documentation Files to Create/Update
+
+| File | Purpose | Source of Truth |
+|------|---------|-----------------|
+| `CLAUDE.md` | Claude Code rules, commands, architecture | Current repo structure + conventions |
+| `AGENTS.md` | Agent context, file map, decision log | Repository structure + git history |
+| `Instructions.md` | Full technical reference | parsers/, transformers/, page-templates.json |
+| `CONTEXT.md` | Brand/design tokens | styles/styles.css + source site visual audit |
+| `MIGRATION-PROMPT.md` | Migration prompt for new pages | Lessons from completed migrations |
+| `MIGRATION-CONTEXT.md` | Lessons learned, gaps, procedures | Import reports + manual fixes applied |
+| `HANDOVER-PROMPT.md` | Handover guide generation prompt | All of the above combined |
+
+### For Each File, Include:
+
+**CLAUDE.md:**
+- Project summary (source, target, type, pages migrated)
+- DO / DO NOT rules
+- Git workflow (force-add, branch, credentials)
+- Available commands (preview, import, bundle, lint)
+- Architecture summary (block count, import scripts, templates)
+- Post-import checklist
+
+**AGENTS.md:**
+- Repository structure (full tree with descriptions)
+- Migration workflow (3 phases: import → validate → commit)
+- File map table (file → purpose → when to read)
+- Import infrastructure summary (script → handles → misses)
+- Decision log (key architectural decisions with reasons)
+
+**Instructions.md:**
+- Project configuration table
+- Site architecture (source CMS patterns, URL structure)
+- Template inventory (name, page count, import script used)
+- Block variants (all blocks with content models)
+- Import scripts (what each handles)
+- Source CMS DOM patterns (selectors, classes)
+- Parser reference (each parser's logic)
+- Transformer reference (cleanup and sections logic)
+- Known issues and debugging tips
+
+**CONTEXT.md:**
+- Brand identity (institution, tagline, source)
+- Color palette (token, hex, CSS variable, usage)
+- Typography (fonts, sizes desktop/mobile, weights)
+- Buttons & links (primary, secondary, rules)
+- Layout & spacing (max-width, padding, breakpoints)
+- Image rules (sizing, display, critical overrides)
+- Block visual patterns (each custom block's visual design)
+- Responsive breakpoints
+
+**MIGRATION-PROMPT.md:**
+- The parameterized migration prompt with all phases
+- Post-import validation checklist
+- Block HTML structure reference
+- Image handling rules
+- Common mistakes to avoid
+
+**MIGRATION-CONTEXT.md:**
+- Import pipeline capabilities and gaps
+- Page type classification (what each template needs)
+- Source CMS patterns (hero types, content blocks)
+- Image download procedure
+- Content file structure best practices
+- Verification script
+- Common mistakes list
+
+### Process
+
+1. Read all existing documentation files
+2. Read current repo state (blocks/, tools/importer/, content/, styles/)
+3. Check git log for recent changes since docs were last updated
+4. Identify gaps or stale information
+5. Update each file to reflect current reality
+6. Ensure cross-references between files are correct
+7. Verify all file paths mentioned actually exist
+
+### Rules
+- Keep documentation factual — only document what EXISTS, not aspirations
+- Use tables for structured data (templates, blocks, colors)
+- Include code examples for commands and block structures
+- Mark frozen/complete items clearly (e.g., "DO NOT MODIFY styles.css")
+- Date-stamp significant changes in documentation
+````
