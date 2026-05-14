@@ -2,16 +2,14 @@
 
 ## Project
 
-UT Austin AEM Edge Delivery Services migration. Drupal 11 → EDS (xwalk).
+AEM Edge Delivery Services migration.
 
 ## Key Rules
 
 ### DO
 - Read `Instructions.md` for full technical reference (blocks, parsers, templates, DOM)
 - Read `CONTEXT.md` for brand colors, typography, visual rules
-- Read `MIGRATION-PROMPT.md` before migrating pages
 - Always download images locally (never leave external URLs in content)
-- Always use `git add -f` for content/ files (excluded by .git/info/exclude)
 - Always verify pages in preview after changes
 - Use existing blocks — only create new ones if truly novel (≥70% different)
 - Use proper EDS section structure: each top-level `<div>` = one section
