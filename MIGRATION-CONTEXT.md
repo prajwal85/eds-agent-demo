@@ -1,110 +1,81 @@
 # Migration Context — Lessons Learned & Post-Import Procedures
 
-This file documents hard-won knowledge from migrating 54 pages from www.utexas.edu.
-Read this BEFORE running any migration and AFTER the importer finishes.
+Hard-won knowledge from migrating pages from www.utexas.edu.
+Read this AFTER running the importer, before doing manual fixes.
 
 ---
 
-## The Import Pipeline Gap
+## Import Pipeline: What It Does vs What It Misses
 
-The automated import pipeline (`run-bulk-import.js`) does these things well:
+**Does well:**
 - Fetches source HTML via Playwright
 - Runs cleanup transformer (removes header/footer/nav)
-- Matches DOM selectors to registered parsers
-- Creates `.plain.html` output with block tables
+- Matches registered DOM selectors to parsers
+- Creates `.plain.html` with block tables
 - Generates import reports
 
-But it does NOT:
-- Download images (leaves external URLs that break in production)
+**Does NOT do:**
+- Download images (leaves external URLs — breaks in production)
 - Download videos (leaves as text links)
-- Detect blocks not registered in the import script
-- Handle Drupal blocks that use JavaScript rendering (maps, carousels)
-- Properly structure multi-image content sections
+- Detect unregistered blocks
+- Handle JS-rendered content (maps, carousels)
+- Properly structure multi-image sections
 
 ---
 
-## Page Type Classification — What Each Type Actually Needs
+## Page Type: What Each Needs Post-Import
 
-### Homepage (import-homepage.js) ✅ COMPLETE
-- Hero video, cards-article, columns-promo, sticky-panels, columns-outro
-- All blocks registered — importer handles structure
-- Images were manually downloaded post-import
+### Homepage — COMPLETE
+All blocks registered. Images manually downloaded post-import.
 
-### Resource Hub (import-resource-hub.js) — PARTIAL
-- Parser handles: columns-resource (two-column link lists)
-- Parser MISSES: hero images, Quick Links icons, "Explore Austin" image grids
-- **Post-import fix needed:** Download hero + icon images, restructure Quick Links
+### Resource Hub — Download hero images, icons, restructure Quick Links
 
-### Section Landing (import-interior.js) — MOST GAPS
-- Parser handles: hero-banner (static `.block-bundle-utexas-hero`), columns-resource
-- Parser MISSES:
-  - **Video heroes** — /energy, /medical-center use `.block-coresite-homepagehero` with video
-  - **News card grids** — story cards with images below the main content
-  - **Stats sections** — counter elements with numbers
-  - **Image-rich content** — flex content areas with images per item
-  - **Events sections** — calendar listings with images
-- **Post-import fix needed:** Complete page rewrite with all sections, images, videos
+### Section Landing — MOST GAPS
+Needs: video hero detection, news cards, stats sections, image-rich content, events. Often requires complete page rewrite.
 
-### Interior Sub-pages (import-interior.js) — ADEQUATE
-- Most are text-heavy with one hero + columns-resource
-- Importer captures structure reasonably well
-- **Post-import fix:** Download hero image, check for missing content sections
+### Interior Sub-pages — ADEQUATE
+Mostly text-heavy. Fix: download hero image, check for missing content sections.
 
 ---
 
-## Drupal Page Patterns — What to Expect
+## Hero Type Detection
 
-### Pages WITH video heroes (use hero-video block)
-- `/` (homepage) — dell-med-center-homepage.mp4
-- `/energy` — texas_energy_hero_video3.mp4
-- `/medical-center` — dell-med-center-loop-v07.mp4
-- `/research` — likely has video
-- `/impact-on-texas` — likely has video
+| Type | Use Block | Detection |
+|------|-----------|-----------|
+| Video | hero-video | `<a href=".../.mp4">` inside hero, or `.block-coresite-homepagehero` with video link |
+| Static image | hero-banner | `.block-bundle-utexas-hero` with `<img>` inside `.ut-hero` |
+| None | skip | No hero selector found (policy pages) |
 
-**Detection:** Look for `<a href=".../.mp4">` inside the hero section or
-`.block-coresite-homepagehero` with a video link.
+### Pages with video heroes
+- `/` — dell-med-center-homepage.mp4
+- `/energy` — texas-energy-hero-video.mp4
+- `/medical-center` — dell-med-center loop
 
-### Pages WITH static hero images (use hero-banner block)
-- `/about-texas` — campus/tower image
-- `/entrepreneurship` — branded banner
-- `/campus-carry` — campus image
-- Most interior sub-pages
-
-**Detection:** `.block-bundle-utexas-hero` with `<img>` inside `.ut-hero`.
-
-### Pages with NO hero (just content)
-- `/family-and-visitor-resources` — starts with Quick Links (but HAS a hero image above)
-- Most policy pages
-
-**Detection:** No `.block-bundle-utexas-hero` or `.block-coresite-homepagehero` found.
-But check the source — some use a different hero class or inline image.
+### Pages with static image heroes
+- `/about-texas`, `/entrepreneurship`, `/campus-carry`, most interior pages
 
 ---
 
 ## Image Download Procedure
 
 ```bash
-# 1. Create directory
 mkdir -p content/images/{page-name}
+curl -sL "{image-url}" -o content/images/{page-name}/{descriptive-name}.jpg
 
-# 2. Download with curl (use -sL to follow redirects silently)
-curl -sL "https://www.utexas.edu/sites/default/files/styles/..." -o content/images/{page-name}/filename.jpg
-
-# 3. For videos
 mkdir -p content/media
-curl -sL "https://www.utexas.edu/sites/default/files/hero_video/..." -o content/media/{name}.mp4
+curl -sL "{video-url}" -o content/media/{name}.mp4
 
-# 4. Verify (should show non-zero file size)
+# Verify non-zero
 ls -lh content/images/{page-name}/
 ```
 
-### Image URL Patterns from UT Austin Drupal
+### Drupal Image URL Sizes
 
 | Pattern | Size | Use for |
 |---------|------|---------|
-| `utexas_image_style_1600w` | 1600px wide | Hero images, full-width |
+| `utexas_image_style_1600w` | 1600px wide | Hero, full-width |
 | `utexas_image_style_800w_800h` | 800x800 | Square thumbnails |
-| `utexas_image_style_500w` | 500px wide | Sidebar images |
+| `utexas_image_style_500w` | 500px wide | Sidebar |
 | `utexas_image_style_450w_600h` | 450x600 | Portrait cards |
 | `utexas_image_style_340w_227h` | 340x227 | News card thumbnails |
 | `utexas_image_style_720w_389h` | 720x389 | Hero banners (smaller) |
@@ -112,47 +83,40 @@ ls -lh content/images/{page-name}/
 
 ---
 
-## Content File Structure Best Practices
-
-Each `.plain.html` file should follow this pattern:
+## Content File Structure
 
 ```html
-<!-- Section 1: Hero (hero-video or hero-banner) -->
+<!-- Section 1: Hero -->
 <div><div class="hero-video">...</div></div>
 
-<!-- Section 2: Intro content -->
+<!-- Section 2: Intro -->
 <div><h2>...</h2><p>...</p></div>
 
-<!-- Section 3: Cards/navigation -->
+<!-- Section 3: Cards -->
 <div><div class="cards-article">...</div></div>
-
-<!-- Section 4: Two-column content -->
-<div><div class="columns-resource">...</div></div>
 
 <!-- Section N: More content... -->
 <div>...</div>
 
-<!-- Final section: Metadata (ALWAYS last) -->
+<!-- LAST section: Metadata (ALWAYS) -->
 <div><div class="metadata">
   <div><div>Title</div><div>Page Title | University of Texas at Austin</div></div>
   <div><div>Description</div><div>SEO description text.</div></div>
 </div></div>
 ```
 
-Key rules:
+Rules:
 - Each top-level `<div>` = one EDS section
-- Block classes go on the first child div: `<div><div class="block-name">...</div></div>`
+- Block class on first child: `<div><div class="block-name">...</div></div>`
 - Metadata is ALWAYS the last section
-- Use `<!-- field:image -->` and `<!-- field:text -->` comments for xwalk field hints
+- Use `<!-- field:image -->` and `<!-- field:text -->` for xwalk hints
 
 ---
 
 ## Verification Script
 
-After fixing a page, verify images load locally:
-
 ```javascript
-// Run in browser console at http://localhost:3000/content/{page-name}
+// Run in browser console at localhost:3000/content/{page-name}
 (() => {
   const imgs = document.querySelectorAll('main img');
   const results = {
@@ -162,21 +126,21 @@ After fixing a page, verify images load locally:
     broken: [...imgs].filter(i => i.naturalWidth === 0).length
   };
   console.table(results);
-  // Goal: external=0, broken=0
+  // PASS: external=0, broken=0
 })();
 ```
 
 ---
 
-## Common Mistakes to Avoid
+## Common Mistakes
 
-1. **Trusting the importer output** — Always scrape the source page independently to see what's actually there
-2. **Forgetting the metadata section** — Every page needs a metadata block at the end
-3. **Using external image URLs** — ALWAYS download locally
-4. **Wrong hero block type** — Check if page has video (→ hero-video) or just image (→ hero-banner)
-5. **Missing news/story cards** — Section landing pages almost always have a news section at the bottom
-6. **Flat content without sections** — Each logical section should be its own top-level `<div>`
-7. **Leaving "Skip to main content" links** — Remove these from output
-8. **Leaving "Breadcrumb" headings** — Remove these from output
-9. **Leaving "Pause button" text** — Artifact of video controls, remove
-10. **Not downloading videos** — Videos must be local in `content/media/`
+1. **Trusting importer output** — Always scrape source independently
+2. **Forgetting metadata section** — Every page needs it as the last section
+3. **External image URLs** — ALWAYS download locally
+4. **Wrong hero type** — Check for video vs static image
+5. **Missing news/story cards** — Section landing pages almost always have these
+6. **Flat content without sections** — Each logical area = its own top-level `<div>`
+7. **"Skip to main content" left in** — Remove
+8. **"Breadcrumb" headings left in** — Remove
+9. **"Pause button" text left in** — Remove (video control artifact)
+10. **Videos not downloaded** — Must be local in `content/media/`

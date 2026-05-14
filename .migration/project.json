@@ -5,5 +5,7 @@
   "aemSitePath": "/content/eds-agent-demo",
   "aemAssetsFolderPath": "/content/dam/eds-agent-demo",
   "aemSiteName": "eds-agent-demo",
-  "aemSiteTitle": "EDS Agent Demo"
+  "aemSiteTitle": "EDS Agent Demo",
+  "previewOrg": "prajwal85",
+  "previewSite": "eds-agent-demo"
 }
