@@ -2,8 +2,7 @@
 
 ## Project Summary
 
-Migrating www.utexas.edu (Drupal 11) to AEM Edge Delivery Services (xwalk project).
-54+ pages identified, 20 currently migrated. Homepage fully styled with custom blocks.
+Migrating {Source_Site} to AEM Edge Delivery Services (xwalk project).
 
 ## File Map
 
@@ -12,7 +11,6 @@ Migrating www.utexas.edu (Drupal 11) to AEM Edge Delivery Services (xwalk projec
 | `CLAUDE.md` | Rules, commands, git workflow | Always — behavioral guardrails |
 | `Instructions.md` | Technical reference (blocks, parsers, templates, DOM) | When building/debugging |
 | `CONTEXT.md` | Brand/design tokens and visual rules | When styling or evaluating visuals |
-| `MIGRATION-PROMPT.md` | Page migration prompt with checklist | Before migrating new pages |
 | `MIGRATION-CONTEXT.md` | Lessons learned and post-import procedures | After running the importer |
 
 ## Decision Log
