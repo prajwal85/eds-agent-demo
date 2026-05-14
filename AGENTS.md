@@ -1,17 +1,20 @@
-# Agent Context — UT Austin EDS Migration
+# Agent Context — EDS Migration
 
 ## Project Summary
 
-Migrating {Source_Site} to AEM Edge Delivery Services (xwalk project).
+Migrating [{Source_Site}](https://www.ets.org/gre.html) to AEM Edge Delivery Services.
+
+see @templates/Instructions.md
+see @templates/Context.md
 
 ## File Map
 
 | File | Purpose | When to read |
 |------|---------|--------------|
 | `CLAUDE.md` | Rules, commands, git workflow | Always — behavioral guardrails |
-| `Instructions.md` | Technical reference (blocks, parsers, templates, DOM) | When building/debugging |
+| `Instructions.md` | Technical reference (blocks, parsers, templates, DOM), Lessons learned and post-import procedures  | When building/debugging |
 | `CONTEXT.md` | Brand/design tokens and visual rules | When styling or evaluating visuals |
-| `MIGRATION-CONTEXT.md` | Lessons learned and post-import procedures | After running the importer |
+| `MIGRATION-CONTEXT.md` | Migration Stats, Assets and content migrated count and details | After running the importer |
 
 ## Decision Log
 
