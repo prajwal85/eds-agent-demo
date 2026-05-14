@@ -1,7 +1,7 @@
 # {{PROJECT_NAME}} — Technical Reference
 
-> **Source:** {{SOURCE_SITE}} ({{SOURCE_CMS}})
-> **Target:** AEM Edge Delivery Services ({{PROJECT_TYPE}})
+> **Source:** {{SOURCE_SITE}} "https://www.ets.org/gre.html"
+> **Target:** AEM Edge Delivery Services
 
 ---
 
@@ -9,15 +9,8 @@
 
 | Setting | Value |
 |---------|-------|
-| Project type | `{{PROJECT_TYPE}}` |
-| Library URL | `{{BLOCK_LIBRARY_URL}}` |
-| Content host | `{{AEM_AUTHOR_HOST}}` |
-| AEM site path | `{{AEM_SITE_PATH}}` |
-| AEM assets folder | `{{AEM_DAM_PATH}}` |
-| Source CMS | {{SOURCE_CMS}} |
-| Config file | `.migration/project.json` |
-| Preview URL | `https://main--{{PREVIEW_SITE}}--{{PREVIEW_ORG}}.aem.page/` |
-| GitHub repo | `{{GITHUB_REPO}}` |
+| AEM site path | `/content/ets` |
+| AEM assets folder | `/content/dam/ets` |
 
 ---
 
@@ -81,14 +74,6 @@ accordion, tabs, carousel, columns, cards, hero, embed, form, modal, quote, vide
 |--------|------|--------------|-----------|
 | | | | |
 
----
-
-## Transformer Reference
-
-| Transformer | File | Phase | Purpose |
-|-------------|------|-------|---------|
-| cleanup | `transformers/{name}-cleanup.js` | before + after | Remove header, footer, nav |
-| sections | `transformers/{name}-sections.js` | after | Section breaks |
 
 ---
 
@@ -117,6 +102,10 @@ FOOTER (removed by transformer):
 <!-- Document issues discovered during migration -->
 
 1. 
+
+---
+
+## Migration Learning
 
 ---
 
