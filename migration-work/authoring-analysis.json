@@ -1,0 +1,197 @@
+{
+  "url": "https://www.ets.org/gre.html",
+  "documentPath": "/gre",
+  "analysisTimestamp": "2026-05-14T16:34:00.000Z",
+  "blockStructuresFetched": ["hero", "cards", "columns"],
+  "sections": [
+    {
+      "sectionNumber": 1,
+      "visualStyle": "purple gradient background with images",
+      "sectionMetadata": null,
+      "sectionMetadataReason": "Background is hero's own full-bleed gradient image design, not section container styling. Hero blocks typically have intrinsic backgrounds.",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "GRE logo image, large headline text, three CTA buttons, stacked student photos on right side with animated spinning text decoration",
+          "decision": "BLOCK",
+          "blockName": "hero-landing",
+          "blockVariant": "hero-landing",
+          "reason": "Complex hero layout with brand logo, headline, multiple CTAs, overlapping images, and decorative animation. Cannot be typed as default content -- requires structured block with background image support.",
+          "contentNotes": "Row 1: background image (purple gradient with student photos). Row 2: H1 heading with GRE logo + headline text, 3 CTA links."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 2,
+      "visualStyle": "light/white background",
+      "sectionMetadata": null,
+      "sectionMetadataReason": "White background, no distinct styling needed.",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Two large statistic numbers displayed side by side with descriptions and footnote",
+          "decision": "BLOCK",
+          "blockName": "columns-stats",
+          "blockVariant": "columns-stats",
+          "reason": "Two items displayed side-by-side, each with a large stat number and description text. Columns block provides the side-by-side layout needed. Not a repeating card pattern -- just two parallel content areas.",
+          "contentNotes": "Row 1: Column 1 = '81%' heading + description paragraph. Column 2 = '87%' heading + description paragraph."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 3,
+      "visualStyle": "light/white background",
+      "sectionMetadata": null,
+      "sectionMetadataReason": "White background, no distinct styling needed.",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Centered heading: 'Supporting your journey to the graduate, business or law program of your dreams'",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Single centered heading -- author can simply type an H2 heading. Prominent styling is a CSS concern, not a block concern."
+        },
+        {
+          "sequenceNumber": 2,
+          "neutralDescription": "Five cards in a horizontal row, each with title, short description, and arrow icon link",
+          "decision": "BLOCK",
+          "blockName": "cards-pathing",
+          "blockVariant": "cards-pathing",
+          "reason": "Repeating structured pattern of 5 items, each with title + description + linked arrow. Obvious match with cards block. No images variant since cards are text-only with arrow navigation.",
+          "contentNotes": "Each row = 1 card. Col 1 = empty (no image). Col 2 = title (bold heading) + description paragraph + link. 5 rows total: Consider grad school, Learn about GRE, Register for GRE, Prepare for GRE, Get recruited."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 4,
+      "visualStyle": "light background",
+      "sectionMetadata": null,
+      "sectionMetadataReason": "Light/white background, no distinct styling needed.",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Side-by-side layout: heading, paragraph, CTA button on left; photo of man on right",
+          "decision": "BLOCK",
+          "blockName": "columns-feature",
+          "blockVariant": "columns-feature",
+          "reason": "Side-by-side layout with text content on one side and an image on the other. Obvious match with columns block (2 columns).",
+          "contentNotes": "Row 1: Column 1 = H2 heading 'Getting started with GRE' + paragraph + CTA link 'About the Test'. Column 2 = image of man wearing glasses."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 5,
+      "visualStyle": "light background",
+      "sectionMetadata": null,
+      "sectionMetadataReason": "Light/white background, no distinct styling needed.",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Side-by-side layout (reversed): photo of girl on left; heading, paragraph, three CTA buttons on right",
+          "decision": "BLOCK",
+          "blockName": "columns-feature",
+          "blockVariant": "columns-feature",
+          "reason": "Side-by-side layout with image on one side and text content on the other (reversed from Section 4). Columns block with 2 columns. Reuses same columns-feature variant as Section 4.",
+          "contentNotes": "Row 1: Column 1 = image of girl using laptop. Column 2 = H2 heading 'Build confidence with Official GRE Prep' + paragraph + 3 CTA links (GRE Mentor Course, Practice Tests, NEW - MINI QUIZ)."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 6,
+      "visualStyle": "dark purple/navy background",
+      "sectionMetadata": {
+        "style": "dark"
+      },
+      "sectionMetadataReason": "Solid dark purple/navy background (#1a212b) with visible section padding around content. Cards block inherits section styling. Section provides container context for the social links.",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Centered heading 'CONNECT WITH GRE' followed by row of 8 social media icons with labels linking to social profiles",
+          "decision": "BLOCK",
+          "blockName": "cards-social",
+          "blockVariant": "cards-social",
+          "reason": "Repeating structured pattern of 8 social media links, each with icon image and label. Cards block is the best fit for this grid of icon + link items.",
+          "contentNotes": "Each row = 1 card. Col 1 = social media icon image. Col 2 = social platform name as linked heading. 8 rows: Facebook, Instagram, LinkedIn, WeChat, Weibo, Zhihu, Naver, YouTube."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 7,
+      "visualStyle": "dark background",
+      "sectionMetadata": {
+        "style": "dark"
+      },
+      "sectionMetadataReason": "Solid dark background with visible section padding. Default content inside a dark-styled section container.",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Left-aligned heading 'Sign up for ETS updates', description text, and CTA button 'Sign Up for Updates'",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Author can type heading, paragraph, and link normally. The dark background styling comes from section-metadata, not from a block. This is a simple CTA banner that works as default content within a styled section."
+        }
+      ]
+    }
+  ],
+  "sectionStylingValidation": {
+    "validatedSections": [
+      {
+        "sectionNumber": 1,
+        "blockType": "hero",
+        "backgroundAnalysis": "Full-width purple gradient image with overlapping student photos, edge-to-edge layout",
+        "decision": "SKIP section-metadata",
+        "reason": "Background is hero's design element (gradient + images), not section container styling. Full-bleed edge-to-edge, no visible section padding."
+      },
+      {
+        "sectionNumber": 2,
+        "blockType": "columns",
+        "backgroundAnalysis": "White/light background, standard page background",
+        "decision": "SKIP section-metadata",
+        "reason": "No distinct background styling to apply."
+      },
+      {
+        "sectionNumber": 4,
+        "blockType": "columns",
+        "backgroundAnalysis": "White/light background, standard page background",
+        "decision": "SKIP section-metadata",
+        "reason": "No distinct background styling to apply."
+      },
+      {
+        "sectionNumber": 5,
+        "blockType": "columns",
+        "backgroundAnalysis": "White/light background, standard page background",
+        "decision": "SKIP section-metadata",
+        "reason": "No distinct background styling to apply."
+      },
+      {
+        "sectionNumber": 6,
+        "blockType": "cards",
+        "backgroundAnalysis": "Solid dark purple/navy (#1a212b) background with visible padding around content grid",
+        "decision": "KEEP section-metadata style=dark",
+        "reason": "Section provides dark container styling for the cards block. Cards inherit section background. Visible padding around the content."
+      }
+    ]
+  },
+  "summary": {
+    "totalSections": 7,
+    "totalSequences": 8,
+    "defaultContentSequences": 2,
+    "blockSequences": 6,
+    "blocksUsed": {
+      "hero-landing": 1,
+      "columns-stats": 1,
+      "columns-feature": 2,
+      "cards-pathing": 1,
+      "cards-social": 1
+    },
+    "variantMapping": {
+      "hero": "hero-landing",
+      "columns(stats)": "columns-stats",
+      "columns(feature)": "columns-feature",
+      "cards(pathing)": "cards-pathing",
+      "cards(social)": "cards-social"
+    },
+    "sectionsWithMetadata": 2,
+    "notes": "Page follows a clear landing page pattern: hero banner, stats, product pathing cards, two ping-pong content sections (columns), social media links, and newsletter signup. All blocks use custom variants -- no vanilla block names used directly."
+  }
+}

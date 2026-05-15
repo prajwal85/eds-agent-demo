@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-pathing",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-14T16:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ets.org/gre.html",
+    "originPage": "GRE product landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "navigation-pathing",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "5 cards, each with title + description + arrow link",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product pathing or navigation cards",
+      "text-only card grids with links",
+      "service or feature category navigation"
+    ],
+    "notSuitableFor": [
+      "image-heavy product showcases",
+      "card grids requiring rich media",
+      "testimonial or quote cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/gre"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-14T16:35:00.000Z"
+  }
+}

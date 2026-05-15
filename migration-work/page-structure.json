@@ -1,0 +1,131 @@
+{
+  "url": "https://www.ets.org/gre.html",
+  "documentPath": "/gre",
+  "analysisTimestamp": "2026-05-14T16:32:00.000Z",
+  "excludedElements": [
+    "Header/navigation (auto-populated)",
+    "Footer (auto-populated)",
+    "Cookie banners, popups, chatbot overlays",
+    "Promotional modal (Black Friday modal)"
+  ],
+  "sections": [
+    {
+      "sectionNumber": 1,
+      "visualStyle": "purple gradient background with images",
+      "description": "Hero banner area with GRE branding, headline, CTAs, and stacked images of students",
+      "backgroundNotes": "Purple/magenta gradient background, full-width, with overlapping student photos on right side and animated spinning text element",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "GRE logo image, large headline text ('Proven to power your grad school journey'), three call-to-action buttons (Register for GRE, Buy Official GRE Prep, Get Free GRE Sample Questions), plus stacked student photos on the right side with an animated spinning text decoration"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 2,
+      "visualStyle": "light/white background",
+      "description": "Statistics section showing two large percentage numbers with descriptions",
+      "backgroundNotes": "White/light background, centered content",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Two large statistic numbers displayed side by side: '81%' with description about GRE test takers accepted into graduate programs, and '87%' with description about applicants who submit GRE scores to test-optional programs being accepted. Small footnote text below."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 3,
+      "visualStyle": "light/white background",
+      "description": "Product pathing section with heading and 5 navigation cards",
+      "backgroundNotes": "White/light background, centered heading with grid of cards below",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Centered heading: 'Supporting your journey to the graduate, business or law program of your dreams'"
+        },
+        {
+          "sequenceNumber": 2,
+          "neutralDescription": "Five cards in a horizontal row, each with a title and short description, plus an arrow icon. Cards: Consider grad school, Learn about GRE, Register for GRE, Prepare for GRE, Get recruited. No images on cards, text-only with arrow navigation indicator."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 4,
+      "visualStyle": "light background, alternating layout",
+      "description": "Side-by-side content block: text on left, image on right ('Getting started with GRE')",
+      "backgroundNotes": "White/light background with slight offset/overlap design on the image",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Side-by-side layout with heading ('Getting started with GRE'), paragraph of descriptive text, and a CTA button ('About the Test') on the left, and a photo of a man wearing glasses laughing on the right"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 5,
+      "visualStyle": "light background, alternating layout (reversed)",
+      "description": "Side-by-side content block: image on left, text on right ('Build confidence with Official GRE Prep')",
+      "backgroundNotes": "White/light background, image appears on the left side this time (ping-pong pattern)",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Side-by-side layout (reversed from previous) with a photo of a girl using a laptop on the left, and heading ('Build confidence with Official GRE Prep'), paragraph text, and three CTA buttons (GRE Mentor Course, Practice Tests, NEW - MINI QUIZ) on the right"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 6,
+      "visualStyle": "dark purple/navy background",
+      "description": "Social media connection section with icons linking to various platforms",
+      "backgroundNotes": "Dark purple/navy background (#1a212b), centered content, ivory/cream accent color",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Centered heading 'CONNECT WITH GRE' followed by a row of 8 social media icons with labels: Facebook, Instagram, LinkedIn, WeChat, Weibo, Zhihu, Naver, YouTube - each linking to the respective GRE social media profile"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 7,
+      "visualStyle": "dark background (dark charcoal/navy)",
+      "description": "Newsletter signup banner",
+      "backgroundNotes": "Dark background, part of the footer experience fragment area",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "neutralDescription": "Left-aligned heading 'Sign up for ETS updates' with description text 'Stay up to date with the latest news, announcements and articles' and a CTA button 'Sign Up for Updates' that opens a modal dialog"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "localBlocks": [
+      { "name": "accordion", "purpose": "Expandable Q&A sections" },
+      { "name": "cards", "purpose": "Grid of items with images/text" },
+      { "name": "carousel", "purpose": "Rotating image/content displays" },
+      { "name": "columns", "purpose": "Side-by-side content layout" },
+      { "name": "embed", "purpose": "Embedded video or external content" },
+      { "name": "footer", "purpose": "Page footer (auto-populated)" },
+      { "name": "form", "purpose": "Form elements" },
+      { "name": "fragment", "purpose": "Reusable content sections" },
+      { "name": "header", "purpose": "Page header (auto-populated)" },
+      { "name": "hero", "purpose": "Large heading, text, buttons for page intro" },
+      { "name": "modal", "purpose": "Modal dialog/popup content" },
+      { "name": "quote", "purpose": "Highlighted testimonials/quotes" },
+      { "name": "search", "purpose": "Search functionality" },
+      { "name": "table", "purpose": "Data table with rows/columns" },
+      { "name": "tabs", "purpose": "Switchable content panels" },
+      { "name": "video", "purpose": "Video player" }
+    ],
+    "blockCollectionAvailable": [
+      { "name": "hero", "purpose": "Large heading, text, buttons for page intro" },
+      { "name": "cards", "purpose": "Grid of items with images/text" },
+      { "name": "columns", "purpose": "Side-by-side content layout" },
+      { "name": "accordion", "purpose": "Expandable Q&A sections" },
+      { "name": "tabs", "purpose": "Switchable content panels" },
+      { "name": "carousel", "purpose": "Rotating image/content displays" },
+      { "name": "quote", "purpose": "Highlighted testimonials" },
+      { "name": "fragment", "purpose": "Reusable content sections" }
+    ]
+  }
+}

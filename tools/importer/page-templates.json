@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "gre-landing-page",
+      "urls": [
+        "https://www.ets.org/gre.html"
+      ],
+      "description": "GRE program landing page with hero, informational sections, and call-to-action areas",
+      "blocks": [
+        {
+          "name": "hero-landing",
+          "instances": [
+            ".hero .c-mosaic"
+          ]
+        },
+        {
+          "name": "columns-stats",
+          "instances": [
+            ".statBreakerModule .c-stat-breaker"
+          ]
+        },
+        {
+          "name": "cards-pathing",
+          "instances": [
+            ".subProductCardPathingModule .c-sub-product-pathing"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            ".pingPongGridModule .c-ping-pong-card--left",
+            ".pingPongGridModule .c-ping-pong-card--right"
+          ]
+        },
+        {
+          "name": "cards-social",
+          "instances": [
+            ".sociallinks .cmp-socialteaser"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner",
+          "selector": ".hero.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "hero-landing"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Statistics",
+          "selector": ".statBreakerModule.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "columns-stats"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Product Pathing",
+          "selector": ".subProductCardPathingModule.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "cards-pathing"
+          ],
+          "defaultContent": [
+            ".c-sub-product-pathing__title"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Getting Started Feature",
+          "selector": [
+            ".pingPongGridModule.aem-GridColumn:has(.c-ping-pong-card--left)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "GRE Prep Feature",
+          "selector": [
+            ".pingPongGridModule.aem-GridColumn:has(.c-ping-pong-card--right)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Social Connect",
+          "selector": ".cmp-experiencefragment--social-following",
+          "style": "dark",
+          "blocks": [
+            "cards-social"
+          ],
+          "defaultContent": [
+            ".cmp-title__text"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Newsletter Signup",
+          "selector": ".formBanner.aem-GridColumn",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            ".form-banner__heading",
+            ".form-banner__description .cmp-text p",
+            ".form-banner__action-container button"
+          ]
+        }
+      ]
+    }
+  ]
+}

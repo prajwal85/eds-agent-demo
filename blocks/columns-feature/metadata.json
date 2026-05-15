@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-14T16:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ets.org/gre.html",
+    "originPage": "GRE product landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-highlight",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + CTA | image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlight sections with image and text",
+      "ping-pong content layouts",
+      "product or service description with photo"
+    ],
+    "notSuitableFor": [
+      "data-heavy comparison tables",
+      "multi-column text-only layouts",
+      "image galleries without text"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/gre"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-14T16:35:00.000Z"
+  }
+}

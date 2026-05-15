@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-landing",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-14T16:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ets.org/gre.html",
+    "originPage": "GRE product landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "product-landing-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "logo + heading + 3 CTAs + stacked images",
+    "buttonCount": 3,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product landing pages",
+      "brand-focused hero sections",
+      "pages with multiple CTAs and background imagery"
+    ],
+    "notSuitableFor": [
+      "simple text-only heroes",
+      "minimal blog post headers",
+      "pages without background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/gre"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-14T16:35:00.000Z"
+  }
+}

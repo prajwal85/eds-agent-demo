@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-social",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-14T16:35:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ets.org/gre.html",
+    "originPage": "GRE product landing page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "social-media-links",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "8 cards, each with icon image + social platform link",
+    "buttonCount": 0,
+    "imageCount": 8
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "social media link sections",
+      "icon-based navigation grids",
+      "contact or follow-us sections"
+    ],
+    "notSuitableFor": [
+      "content-heavy card grids",
+      "product showcase cards",
+      "image gallery cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/gre"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-14T16:35:00.000Z"
+  }
+}
