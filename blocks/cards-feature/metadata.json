@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-19T04:41:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.psiexams.com/",
+    "originPage": "PSI homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-grid",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "photo + heading + description",
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "value proposition grids",
+      "feature highlight sections with photos",
+      "partner benefit grids on light backgrounds"
+    ],
+    "notSuitableFor": [
+      "icon-based service listings",
+      "dark background sections",
+      "article/blog listings"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T04:41:00.000Z"
+  }
+}

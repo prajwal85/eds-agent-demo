@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-testimonial",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-19T04:41:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.psiexams.com/",
+    "originPage": "PSI homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "testimonial",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "client image + quote + name + title + case study link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "customer testimonial sections",
+      "success story carousels",
+      "client quote sliders on dark backgrounds"
+    ],
+    "notSuitableFor": [
+      "image-only galleries",
+      "product carousels",
+      "article/blog carousels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T04:41:00.000Z"
+  }
+}

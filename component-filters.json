@@ -11,12 +11,19 @@
       "accordion",
       "button",
       "cards",
+      "cards-feature",
+      "cards-service",
       "carousel",
+      "carousel-article",
+      "carousel-testimonial",
       "columns",
+      "columns-brand",
       "embed",
       "fragment",
       "form",
       "hero",
+      "hero-cta",
+      "hero-homepage",
       "image",
       "quote",
       "search",
@@ -34,15 +41,54 @@
     ]
   },
   {
+    "id": "cards-feature",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-service",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
     ]
   },
   {
+    "id": "carousel-article",
+    "components": [
+      "carousel-article-item"
+    ]
+  },
+  {
+    "id": "carousel-testimonial",
+    "components": [
+      "carousel-testimonial-item"
+    ]
+  },
+  {
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "columns-brand",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
