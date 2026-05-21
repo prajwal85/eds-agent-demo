@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-brand",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-19T04:41:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.psiexams.com/",
+    "originPage": "PSI homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "brand-showcase",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "logo + heading + description",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "partner/brand showcase sections",
+      "product line presentations",
+      "side-by-side brand descriptions on dark backgrounds"
+    ],
+    "notSuitableFor": [
+      "text-heavy comparison sections",
+      "image galleries",
+      "feature comparisons with many items"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T04:41:00.000Z"
+  }
+}

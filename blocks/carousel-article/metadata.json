@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-article",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-19T04:41:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.psiexams.com/",
+    "originPage": "PSI homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "article-slider",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "category tag + date + title + thumbnail image",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "knowledge hub/blog article sliders",
+      "recent posts carousels",
+      "resource listings with thumbnails"
+    ],
+    "notSuitableFor": [
+      "testimonial carousels",
+      "full-width hero carousels",
+      "image-only galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-19T04:41:00.000Z"
+  }
+}
